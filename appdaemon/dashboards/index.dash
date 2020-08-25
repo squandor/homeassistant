@@ -1,0 +1,58 @@
+<% content_for :title do %>test<% end %>
+<script type='text/javascript'>
+$(function() {
+  // These settings override the defaults set in application.coffee. You can do this on a per dashboard basis.
+   Dashing.widget_margins = [0, 0]
+   Dashing.widget_base_dimensions = [13, 12]
+   Dashing.numColumns = 130
+});
+</script>
+
+
+<div class="gridster"> <!-- Main Panel - PAGE 1 -->
+  <ul>
+    <li data-row="2" data-col="2" data-sizex="30" data-sizey="3">
+      <div data-text="" data-view="Hatext" data-title="time, sunrise and sunset" data-bgcolor="#2F2F2F"></div>
+    </li>
+    <li data-row="5" data-col="2" data-sizex="14" data-sizey="10">
+      <div data-id="clock2" data-view="Clock2" data-bgcolor="#3A3A3A"></div>
+    </li>
+    <li data-row="5" data-col="16" data-sizex="8" data-sizey="10">
+      <div data-id="sun.sun" data-view="Hasensor" data-title="Sunset" data-title2="Uden" data-bgcolor="#3A3A3A"></div>
+    </li>
+    <li data-row="5" data-col="24" data-sizex="8" data-sizey="10">
+      <div data-id="zonop" data-view="Hasensor" data-title="Sunrise" data-title2="Uden" data-bgcolor="#3A3A3A"></div>
+    </li>
+
+
+    <li data-row="16" data-col="2" data-sizex="8" data-sizey="3">
+      <div data-text="" data-view="Hatext" data-title="Switches" data-bgcolor="#2F2F2F"></div>
+    </li>
+    <li data-row="19" data-col="2" data-sizex="8" data-sizey="10">
+      <div data-id="olindedekkie" data-view="Haswitch" data-icon="moon-o" data-timea="dekkies_gaan_aan" data-timeb="dekkies_gaan_uit" data-title="Switch" data-title2="number 3" data-bgcolor="#3A3A3A"></div>
+    </li>
+    <li data-row="29" data-col="2" data-sizex="8" data-sizey="10">
+      <div data-id="hboog" data-view="Haswitch" data-icon="lightbulb-o" data-timea="huiskamer_verlichting" data-timeb="o" data-title="Switch" data-title2="number 1" data-bgcolor="#3A3A3A"></div>
+    </li>
+    <li data-row="39" data-col="2" data-sizex="8" data-sizey="10">
+      <div data-id="jacuzzi" data-view="Haswitch" data-icon="lightbulb-o" data-timea="buiten_verlichting" data-timeb="verlichting_uit" data-title="Switch" data-title2="number 2" data-bgcolor="#3A3A3A"></div>
+    </li>
+
+
+    <li data-row="16" data-col="11" data-sizex="8" data-sizey="3">
+      <div data-text="" data-view="Hatext" data-title="Temperature" data-bgcolor="#2F2F2F"></div>
+    </li>
+    <li data-row="19" data-col="11" data-sizex="8" data-sizey="10">
+      <div data-id="vijver_repeater_7_0" data-view="Hameter" data-title="Pond" data-title2="frontside" data-unit="&deg;C" data-bgcolor="#3A3A3A"></div>
+    </li>
+    <li data-row="29" data-col="11" data-sizex="8" data-sizey="10">
+      <div data-id="vijver_repeater_7_1" data-view="Hameter" data-title="Outside" data-title2="terras" data-unit="&deg;C" data-bgcolor="#3A3A3A"></div>
+    </li>
+    <li data-row="39" data-col="11" data-sizex="8" data-sizey="10">
+      <div data-id="arduino2_3_0" data-view="Hameter" data-title="Near the" data-title2="wall" data-unit="&deg;C" data-bgcolor="#3A3A3A"></div>
+    </li>
+
+  </ul>
+</div>
+
+

@@ -1,0 +1,30 @@
+#- platform: foscam
+#  ip: 192.168.1.155
+#  username: !secret foscam_username
+#  password: !secret foscam_password
+#  name: Babykamer
+- platform: foscam
+  ip: !secret cam_garden
+  username: !secret foscam_username
+  password: !secret foscam_password
+  name: Tuin
+- platform: foscam
+  ip: !secret cam_frontdoor
+  username: !secret foscam_username
+  password: !secret foscam_password
+  name: Voordeur
+
+- platform: mjpeg
+  mjpeg_url: !secret octoprint_cam_url
+  name: octaprint
+
+- platform: generic
+  still_image_url: !secret still_image_url
+  stream_source: !secret frontdoor_nas_url
+  name: Voordeur_nas
+
+- platform: generic
+  still_image_url: !secret still_image_url
+  name: Tuin_nas
+  stream_source: !secret backdoor_nas_url
+

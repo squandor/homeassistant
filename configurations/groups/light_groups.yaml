@@ -1,0 +1,34 @@
+garden_lights:
+  name: Alle tuin lampen
+  entities:
+    - switch.tuinverlichting_schuur_switch
+    - switch.veranda_lamp_switch
+    - light.tuin_spot_1
+    - light.tuin_spot_2
+
+kitchen_tls:
+  name: Keuken tl lampen
+  entities:
+    - switch.keuken_links_switch
+    - switch.keuken_rechts_switch_2
+alle_keuken_lampen:
+  name: Alle Keuken Lampen
+  entities:
+    - light.hue_color_spot_1_light
+    - light.hue_color_spot_2_light
+    - light.hue_color_spot_3_light
+    - switch.keuken_links_switch
+    - switch.keuken_rechts_switch_2
+
+gang_lampen:
+  name: Lampen in de gang
+  entities:
+    - light.gang_boven_light
+    - light.lamp_trap_light
+    - light.gang_beneden
+
+slaapkamer_lampen:
+  name: Slaapkamer lampen
+  entities:
+    - switch.slaapkamer_sand_switch
+    - switch.slaapkamer_lari_switch

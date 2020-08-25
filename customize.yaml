@@ -1,0 +1,29 @@
+person.squandor:
+  entity_picture: /local/squandor.jpeg
+person.Larissa:
+  entity_picture: /local/larissa.jpeg
+person.Jo:
+  entity_picture: /local/jo.jpeg
+switch.frontdoor_motion:
+  assumed_state: false
+switch.backdoor_motion:
+  assumed_state: false
+switch.tuin_lichtslang:
+  assumed_state: false
+switch.lamp_brandgang:
+  assumed_state: false
+light.kitchen:
+  assumed_state: false
+sensor.afval_oudpapier_6_dagen:
+  icon: mdi:delete-circle
+sensor.afval_groen_6_dagen:
+  icon: mdi:delete-circle
+sensor.afval_restafval_6_dagen:
+  icon: mdi:delete-circle
+sensor.afval_plastic_6_dagen:
+  icon: mdi:delete-circle
+switch.kerstboom_switch: {}
+switch.keuken_rechts_switch: {}
+switch.slaapkamer_lari_switch: {}
+group.living_room:
+  icon: mdi:lightbulb

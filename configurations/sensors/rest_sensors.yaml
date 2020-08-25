@@ -1,0 +1,40 @@
+- platform: rest
+  name: Badkamer_Volume
+  resource: !secret rest_badkamer
+  method: GET
+  json_attributes: ["id","name", "type", "selected", "has_password", "requires_auth", "needs_auth_key", "volume"]
+  value_template: "{{ value_json.volume }}"
+  scan_interval: 5
+
+- platform: rest
+  name: google_home_woonkamer_volume
+  resource: !secret rest_ggh_woonkamer
+  method: GET
+  json_attributes: ["id","name", "type", "selected", "has_password", "requires_auth", "needs_auth_key", "volume"]
+  value_template: "{{ value_json.volume }}"
+  scan_interval: 5
+
+- platform: rest
+  name: google_home_slaapkamer_volume
+  resource: !secret rest_ggh_slaapkamer
+  method: GET
+  json_attributes: ["id","name", "type", "selected", "has_password", "requires_auth", "needs_auth_key", "volume"]
+  value_template: "{{ value_json.volume }}"
+  scan_interval: 5
+
+- platform: rest
+  name: Woonkamer Volume
+  resource: !secret rest_woonkamer
+  method: GET
+  json_attributes: ["id","name", "type", "selected", "has_password", "requires_auth", "needs_auth_key", "volume"]
+  value_template: "{{ value_json.volume }}"
+  scan_interval: 5
+
+- platform: rest
+  name: Chromecast Woonkamer Volume
+  resource: !secret rest_chromecast_woonkamer
+  method: GET
+  json_attributes: ["id","name", "type", "selected", "has_password", "requires_auth", "needs_auth_key", "volume"]
+  value_template: "{{ value_json.volume }}"
+  scan_interval: 5
+

@@ -1,0 +1,28 @@
+- platform: systemmonitor
+  resources:
+    - type: memory_use_percent
+    - type: swap_use_percent
+    - type: processor_use
+
+
+## Morning / evening
+- platform: time_date
+  display_options:
+    - 'time'
+
+- platform: command_line
+  name: CPU Temperature
+  command: 'cat /sys/class/hwmon/hwmon1/temp2_input'
+  unit_of_measurement: '°C'
+  value_template: '{{ value | multiply(0.001) }}'
+
+
+- platform: dnsip
+  name: External IP
+
+
+- platform: dnsip
+  hostname: !secret dns_local
+  name: !secret dns_local
+  resolver: 8.8.8.8
+

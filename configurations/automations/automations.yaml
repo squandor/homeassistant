@@ -1,0 +1,84 @@
+- alias: update dns record transip
+  trigger:
+  - platform: time_pattern
+    minutes: /01
+    seconds: 1
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: binary_sensor.external_ip_diff
+      state: 'off'
+    - condition: template
+      value_template: '{{states.sensor.external_ip.state != Onbekend}}'
+  action:
+  - service: script.update_transip
+  id: c85f1e5b262b4a78878701e5f3007872
+
+- alias: Wake Me Up
+  trigger:
+    platform: template
+    value_template: '{{ states.sensor.time.state == strptime(states.sensor.alarm_time.state,
+      "%H:%M").strftime("%H:%M")}}'
+  condition:
+    condition: or
+    conditions:
+    - condition: and
+      conditions:
+      - condition: state
+        entity_id: input_boolean.alarmstatus
+        state: 'on'
+      - condition: state
+        entity_id: input_boolean.alarmweekday
+        state: 'on'
+      - condition: time
+        weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+        - sat
+        - sun
+    - condition: and
+      conditions:
+      - condition: state
+        entity_id: input_boolean.alarmstatus
+        state: 'on'
+      - condition: state
+        entity_id: input_boolean.alarmweekday
+        state: 'off'
+  action:
+  - service: script.start_spotify_wekker
+  - service: homeassistant.turn_on
+    entity_id: switch.slaapkamer_sand_switch
+  - delay: 00:01:00
+  - service: shell_command.speaker_google_home_slaapkamer_volume_up
+    data:
+      forked_daapd_serverip_port_ip: !secret forked_daapd_serverip_port_ip
+  - delay: 00:01:00
+  - service: shell_command.speaker_google_home_slaapkamer_volume_up
+    data:
+      forked_daapd_serverip_port_ip: !secret forked_daapd_serverip_port_ip
+  - delay: 00:01:00
+  - service: shell_command.speaker_google_home_slaapkamer_volume_up
+    data:
+      forked_daapd_serverip_port_ip: !secret forked_daapd_serverip_port_ip
+  - delay: 00:01:00
+  - service: shell_command.speaker_google_home_slaapkamer_volume_up
+    data:
+      forked_daapd_serverip_port_ip: !secret forked_daapd_serverip_port_ip
+  - delay: 00:01:00
+  - service: shell_command.speaker_google_home_slaapkamer_volume_up
+    data:
+      forked_daapd_serverip_port_ip: !secret forked_daapd_serverip_port_ip
+  - delay: 00:01:00
+  - service: shell_command.speaker_google_home_slaapkamer_volume_up
+    data:
+      forked_daapd_serverip_port_ip: !secret forked_daapd_serverip_port_ip
+  - service: notify.telegram_home
+    data:
+      message: Good morning. Time to Wake Up!
+      title: ''
+  id: e29f11e00cce4118ab39decaadac6d4f
+

@@ -1,0 +1,34 @@
+tv_on:
+  alias: Turn tv on
+  sequence:
+  - service: shell_command.turn_tv_on
+tv_off:
+  alias: Turn tv off
+  sequence:
+  - service: shell_command.turn_tv_off
+frontdoor_snapshot:
+  alias: Snaphot Voordeur
+  sequence:
+  - service: camera.snapshot
+    data:
+      entity_id: camera.voordeur
+      filename: !secret frontdoor_snapshot
+update_transip:
+  alias: Update Transip DNS
+  sequence:
+  - service: shell_command.run_transip_update
+start_spotify_wekker:
+  alias: Start Spotify Google Home Slaapkamer
+  sequence:
+  - service: shell_command.speaker_google_home_slaapkamer_on
+  - service: shell_command.login_music_server
+  - service: shell_command.startplaylist_music_server
+  - service: shell_command.logout_music_server
+cast_downstairs_on_kitchen:
+  alias: Show Downstairs on kitchen
+  sequence:
+  - data:
+      dashboard_path: lovelace
+      entity_id: media_player.chromecast_woonkamer
+      view_path: hub
+    service: cast.show_lovelace_view

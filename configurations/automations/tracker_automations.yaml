@@ -1,0 +1,97 @@
+- alias: Nobody Home
+  trigger:
+    platform: state
+    entity_id: group.people
+    to: not_home
+  action:
+  - service: homeassistant.turn_on
+    entity_id: group.all_camera_motion
+  - service: alarm_control_panel.alarm_arm_away
+    entity_id: alarm_control_panel.ha_alarm
+  - service: lights.turn_off
+    entity_id:
+    - light.living_room
+    - light.gang_beneden
+  - service: notify.telegram_home
+    data:
+      message: Nobody home
+  id: 6a84ee467daf4f4e9f12b4fada6bc898
+- alias: Something turned on while leaving
+  trigger:
+    platform: state
+    entity_id: group.people
+    to: not_home
+  condition:
+    condition: or
+    conditions:
+    - condition: state
+      entity_id: group.alle_keuken_lampen
+      state: 'on'
+    - condition: state
+      entity_id: light.living_room
+      state: 'on'
+    - condition: state
+      entity_id: group.slaapkamer_lampen
+      state: 'on'
+  action:
+  - service: telegram_bot.send_message
+    data_template:
+      message: 'Something is still turned on while leaving:
+
+        Lampen woonkamer: {{ states.light.living_room.state }}
+
+        Lampen keuken: {{ states.group.alle_keuken_lampen.state }}
+
+        Lampen slaapkamer: {{ states.group.slaapkamer_lampen.state }}
+
+        '
+  id: f5e6b07e44034244ae60f1b19780de95
+- alias: Nobody home 10 min. switch tv
+  trigger:
+    platform: state
+    entity_id: group.people
+    to: not_home
+    for:
+      minutes: 10
+  condition:
+  - condition: state
+    entity_id: switch.tv_livingroom
+    state: 'on'
+  action:
+  - service: homeassistant.turn_off
+    entity_id: switch.tv_livingroom
+  id: 6f41214295f54fe199279f7597f4f3e0
+- alias: Someone Home motion before sunset
+  trigger:
+    platform: state
+    entity_id: group.people
+    to: home
+  condition:
+    condition: state
+    entity_id: sun.sun
+    state: above_horizon
+  action:
+  - service: homeassistant.turn_off
+    entity_id: group.all_camera_motion
+  - service: alarm_control_panel.alarm_disarm
+    entity_id: alarm_control_panel.ha_alarm
+  - service: notify.telegram_home
+    data:
+      message: Someone is home
+  id: aade30a5e1ff404c876a3dc23c816994
+- alias: Someone home motion after sunset
+  trigger:
+    platform: state
+    entity_id: group.people
+    to: home
+  condition:
+    condition: state
+    entity_id: sun.sun
+    state: below_horizon
+  action:
+  - service: alarm_control_panel.alarm_arm_night
+    entity_id: alarm_control_panel.ha_alarm
+  - service: notify.telegram_home
+    data:
+      message: Someone is home
+  id: 6764a7a9d6e243808294a32338155d23

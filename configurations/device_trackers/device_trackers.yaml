@@ -1,0 +1,9 @@
+- platform: unifi_direct
+  host: !secret ap_upstairs_ip
+  username: !secret ubiquiti_username
+  password: !secret ubiquiti_password
+
+- platform: unifi_direct
+  host: !secret ap_downstairs_ip
+  username: !secret ubiquiti_username
+  password: !secret ubiquiti_password

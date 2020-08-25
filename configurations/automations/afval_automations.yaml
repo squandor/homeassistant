@@ -1,0 +1,61 @@
+- alias: check_afval_groen
+  trigger:
+  - platform: time
+    at: 08:00:00
+  - platform: time
+    at: '20:00:00'
+  condition:
+  - condition: template
+    value_template: '{{states.sensor.afval_groen.state == ((as_timestamp(now())+ (86400))
+      | timestamp_custom("%d-%m-%Y",true))}}'
+  action:
+  - service: notify.telegram_home
+    data:
+      message: Let op morgen wordt de groene container opgehaald!
+  id: 84aabe5f9fa24780b7851d219698c8b8
+- alias: check_afval_restafval
+  trigger:
+  - platform: time
+    at: 08:00:00
+  - platform: time
+    at: '20:00:00'
+  condition:
+  - condition: template
+    value_template: '{{states.sensor.afval_restafval.state == ((as_timestamp(now())+
+      (86400)) | timestamp_custom("%d-%m-%Y",true))}}'
+  action:
+  - service: notify.telegram_home
+    data:
+      message: Let op morgen wordt de restafval container opgehaald!
+  id: 372b8358ec66401b99a3b5f80beb004c
+- alias: check_afval_papier
+  trigger:
+  - platform: time
+    at: 08:00:00
+  - platform: time
+    at: '20:00:00'
+  condition:
+  - condition: template
+    value_template: '{{states.sensor.afval_oudpapier.state == ((as_timestamp(now())+
+      (86400)) | timestamp_custom("%d-%m-%Y",true))}}'
+  action:
+  - service: notify.telegram_home
+    data:
+      message: Let op morgen wordt de papier container opgehaald!
+  id: 7f5fbc1047a846d5b9bbb003a60ef47f
+- alias: check_afval_plastic
+  initial_state: 'true'
+  trigger:
+  - platform: time
+    at: 08:00:00
+  - platform: time
+    at: '20:00:00'
+  condition:
+    condition: template
+    value_template: '{{states.sensor.afval_plastic.state == ((as_timestamp(now())+
+      (86400)) | timestamp_custom("%d-%m-%Y",true))}}'
+  action:
+  - service: notify.telegram_home
+    data:
+      message: Let op morgen wordt het plastic opgehaald!
+  id: 4d4364aebd6a4d9eb7a61a04ca81c3ec

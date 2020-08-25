@@ -1,0 +1,46 @@
+- platform: group
+  name: Keuken
+  entities:
+    - light.hue_color_spot_1_light
+    - light.hue_color_spot_2_light
+    - light.hue_color_spot_3_light
+
+- platform: group
+  name: Woonkamer spot bank
+  entities:
+    - light.bank_spot_1_2
+    - light.bank_spot_2_2
+    - light.bank_spot_3_2
+    - light.bank_spot_4_2
+
+- platform: group
+  name: Woonkamer spots
+  entities:
+    - light.tv_spot_1
+    - light.tv_spot_2
+    - light.tv_spot_3
+    - light.bank_spot_1_2
+    - light.bank_spot_2_2
+    - light.bank_spot_3_2
+    - light.bank_spot_4_2
+
+- platform: group
+  name: Woonkamer spot TV
+  entities:
+    - light.tv_spot_1
+    - light.tv_spot_2
+    - light.tv_spot_3
+
+- platform: group
+  name: Living_room
+  entities:
+    - light.tafellamp_1
+    - light.tafellamp_2
+    - light.tafellamp_3
+
+- platform: group
+  name: gang_lampen
+  entities:
+    - light.gang_boven_light
+    - light.lamp_trap_light
+    - light.gang_beneden

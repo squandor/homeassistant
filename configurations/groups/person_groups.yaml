@@ -1,0 +1,14 @@
+people:
+  name: People
+#  view: false
+  entities:
+    - person.squandor
+    - person.larissa
+    - person.jo
+
+people_alarm:
+  name: People Alarm group
+#  view: true
+  entities:
+    - person.squandor
+    - person.larissa

@@ -1,0 +1,66 @@
+- id: cd95471c9f27471a824d47d955699bbb
+  alias: Set HA theme for day and night
+  trigger:
+  - event: start
+    platform: homeassistant
+  - entity_id: sun.sun
+    platform: state
+    to: above_horizon
+  - entity_id: sun.sun
+    platform: state
+    to: below_horizon
+  action:
+  - data_template:
+      name: "{% if states.sun.sun.state == \"above_horizon\" %}\n  Google Light Theme\n\
+        {% else %}\n  Google Dark Theme\n{% endif %}\n"
+    service_template: frontend.set_theme
+- alias: run_on_sunset
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: +00:00:00
+  action:
+  - service: homeassistant.turn_on
+    entity_id:
+    - group.garden_lights
+    - group.all_camera_motion
+  - service: cover.close_cover
+    entity_id: cover.woonkamer_gordijnen
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.keuken_led_strip
+      option: Paars
+  id: 4394c73585124eb5aaf415580ba4e96a
+- alias: run_at_midnight
+  trigger:
+  - platform: time
+    at: 00:00:00
+  action:
+  - service: homeassistant.turn_off
+    entity_id:
+    - group.garden_lights
+  - service: alarm_control_panel.alarm_arm_night
+    entity_id: alarm_control_panel.ha_alarm
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.keuken_led_strip
+      option: false
+  id: 83fbe6ad17b14e29b00a1619db4c1112
+- alias: run_at_sunrise
+  trigger:
+  - platform: sun
+    event: sunrise
+    offset: +00:00:00
+  condition:
+    condition: state
+    entity_id: group.people
+    state: home
+  action:
+  - service: homeassistant.turn_off
+    entity_id:
+    - group.all_camera_motion
+  - service: cover.open_cover
+    entity_id: cover.woonkamer_gordijnen
+  - service: alarm_control_panel.alarm_disarm
+    entity_id: alarm_control_panel.ha_alarm
+  id: 9a60b820f4284910966afae83ce4e286

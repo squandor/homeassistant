@@ -1,0 +1,8 @@
+- platform: min_max
+  name: "woonkamer_lux"
+  type: max
+  entity_ids:
+    - sensor.bewegingsensor_woonkamer_illuminance
+    - sensor.motion_woonkamer_2_illuminance
+    - sensor.motion_woonkamer_3_illuminance
+

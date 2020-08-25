@@ -1,0 +1,60 @@
+- alias: Kitchen Ledstrip Change Color Purple
+  trigger:
+    platform: state
+    entity_id: input_select.keuken_led_strip
+    to: Paars
+  action:
+  - service: shell_command.kitchen_led_paars
+    data:
+      ip_kitchen_led: !secret kitchen_led_ip
+  id: eeb22ec7157f4f638fa57c8a3d898d38
+- alias: Kitchen Ledstrip Change Color Red
+  trigger:
+    platform: state
+    entity_id: input_select.keuken_led_strip
+    to: Rood
+  action:
+  - service: shell_command.kitchen_led_rood
+    data:
+      ip_kitchen_led: !secret kitchen_led_ip
+  id: a4c85af69653499ebd12e38905badad2
+- alias: Kitchen ledstrip change color off
+  trigger:
+    platform: state
+    entity_id: input_select.keuken_led_strip
+    to: 'False'
+  action:
+  - service: shell_command.kitchen_led_off
+    data:
+      ip_kitchen_led: !secret kitchen_led_ip
+  id: d2959ed38b3e431b979731f55fd7cb48
+- alias: Kitchen Ledstrip Change Color Green
+  trigger:
+    platform: state
+    entity_id: input_select.keuken_led_strip
+    to: Groen
+  action:
+  - service: shell_command.kitchen_led_groen
+    data:
+      ip_kitchen_led: !secret kitchen_led_ip
+  id: 32167c094038455e95941366263b5a56
+- alias: Kitchen Ledstrip Change Color Blauw
+  trigger:
+    platform: state
+    entity_id: input_select.keuken_led_strip
+    to: Blauw
+  action:
+  - service: shell_command.kitchen_led_blauw
+    data:
+      ip_kitchen_led: !secret kitchen_led_ip
+  id: 78f2cc7d19ca493d9e7212ba4841defb
+- alias: Kitchen Ledstrip Change Color White
+  trigger:
+    platform: state
+    entity_id: input_select.keuken_led_strip
+    to: Wit
+  action:
+  - service: shell_command.kitchen_led_wit
+    data:
+      ip_kitchen_led: !secret kitchen_led_ip
+  id: a4218adb4a5e460984cd35abbf9ab8ba

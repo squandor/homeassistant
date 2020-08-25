@@ -1,0 +1,20 @@
+- alias: Message if memory is above 80%
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.memory_use_percent
+    above: 80
+  action:
+  - service: notify.telegram_home
+    data:
+      message: HA memory usage above 80%
+  id: 1a8cfc0af64e47df897df7c3f3b39cb1
+- alias: Message if swap is above 80%
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.swap_use_percent
+    above: 80
+  action:
+  - service: notify.telegram_home
+    data:
+      message: HA swap usage above 80%
+  id: 917c788f30264861a03d418509b6da88

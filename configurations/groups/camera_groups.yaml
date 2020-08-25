@@ -1,0 +1,7 @@
+all_camera_motion:
+  name: Bewegingsdetectie cameras
+  entities:
+    #- automation.send_pic_on_ttgo_motion_dark
+    #- automation.send_pic_on_ttgo_motion_light
+    - switch.frontdoor_motion
+    - switch.backdoor_motion

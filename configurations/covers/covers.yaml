@@ -1,0 +1,15 @@
+- platform: mqtt
+  name: woonkamer_gordijnen
+  qos: 0
+  retain: true
+  optimistic: false
+  state_topic: "home/cover/woonkamer"
+  command_topic: "home/cover/woonkamer/command"
+  payload_open: "open"
+  payload_close: "close"
+  payload_stop: "stop"
+  state_open: "open"
+  position_topic: "home/cover/woonkamer/pos"
+  set_position_topic: "home/cover/woonkamer/command/pos"
+  position_closed: 0
+  position_open: 100

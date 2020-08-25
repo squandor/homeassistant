@@ -1,0 +1,10 @@
+- platform: mpd
+  name: Music Server
+  host: !secret forked_daapd_ip
+- platform: spotify
+  client_id: !secret spotify_client_id
+  client_secret: !secret spotify_client_secret
+
+- platform: lg_netcast
+  host: !secret tv_woonkamer
+  access_token: !secret tv_woonkamer_accesstoken

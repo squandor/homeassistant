@@ -1,0 +1,254 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  allowlist_external_dirs:
+     - /config/
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret latitude_home
+  longitude: !secret longitude_home
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 0
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Amsterdam
+  # Customization file
+  customize: !include customize.yaml
+  external_url: !secret external_url 
+  internal_url: !secret internal_url 
+config:
+
+logbook:
+#  auth_providers:
+ #   - type: legacy_api_password
+  #    api_password: !secret http_password
+
+#http:
+#  api_password: !secret http_password
+zone:
+  - name: Home
+    latitude: !secret latitude_home
+    longitude: !secret longitude_home
+    radius: 100
+    icon: mdi:home
+
+  - name: Work
+    latitude: !secret latitude_work
+    longitude: !secret longitude_work
+    radius: 100
+    icon: mdi:worker
+sun:
+
+history:
+  exclude:
+    domains:
+      - automation
+      - updater
+  include:
+    domains:
+      - light
+      - switch
+      - zwave
+      - device_tracker
+      - binary_sensor
+      - weather
+      - person
+
+mqtt_statestream:
+  base_topic: homeassistant
+  include:
+    entities:
+      - sensor.alarm_pass
+recorder:
+  db_url: !secret mysqlurl
+  # Delete events and states older than 2 days
+  purge_keep_days: 10
+  include:
+    domains:
+      - sensor
+      - switch
+      - device_tracker
+      - light
+      - person
+  exclude:
+    domains:
+      - automation
+      - updater
+    entity_globs:
+      - sensor.weather_*
+    entities:
+      - sun.sun # Don't record sun data
+      - sensor.last_boot # Comes from 'systemmonitor' sensor platform
+      - sensor.date
+    event_types:
+      - call_service
+
+frontend:
+  javascript_version: latest
+  themes: !include_dir_merge_named themes
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+# default_config:
+
+updater:
+
+zwave:
+  usb_path: /dev/serial/by-id/usb-0658_0200-if00
+#  network_key: 0xc33dfd6f
+
+
+# Discover some devices automatically
+discovery:
+
+weather:
+  - platform: buienradar
+stream:
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+group: !include_dir_merge_named configurations/groups/
+light: !include_dir_merge_list configurations/lights/
+automation: !include_dir_merge_list configurations/automations/
+script: !include configurations/scripts/scripts.yaml
+input_number: !include configurations/inputs/input_number.yaml
+input_select: !include configurations/inputs/input_select.yaml
+input_boolean: !include configurations/inputs/input_boolean.yaml
+input_text: !include configurations/inputs/input_text.yaml
+media_player: !include_dir_merge_list configurations/media/
+rest_command: !include_dir_merge_list configurations/rest_commands/
+sensor: !include_dir_merge_list configurations/sensors/
+switch: !include_dir_merge_list configurations/switches/
+shell_command: !include_dir_merge_named configurations/shell_commands/
+camera: !include_dir_merge_list configurations/cameras/
+binary_sensor: !include_dir_merge_list configurations/binary_sensors/
+device_tracker: !include_dir_merge_list configurations/device_trackers/
+cover: !include_dir_merge_list configurations/covers/
+# service: !include configurations/services/services.yaml
+
+python_script:
+
+influxdb:
+  host: !secret influx_ip
+  max_retries: 3
+
+panel_iframe:
+  grafana:
+    title: "Verbruik"
+    url: !secret influx_url_dash_verbruik
+    icon: mdi:power-plug
+    require_admin: false
+
+google:
+  client_id: !secret google_api_client_id
+  client_secret: !secret google_api_client_secret
+
+octoprint:
+  host: !secret octoprint_ip
+  api_key: !secret octoprint_api
+  number_of_tools: 1
+  bed: true
+
+# Telegram
+telegram_bot:
+  - platform: polling
+    api_key: !secret telegram_bot_api
+    allowed_chat_ids:
+      - !secret telegram_chat_id
+    parse_mode: html
+notify:
+  - name: telegram_home
+    platform: telegram
+    chat_id: !secret telegram_chat_id
+
+downloader:
+  download_dir: /config/www/cam_captures
+
+mqtt:
+  discovery: true
+  broker: !secret mqtt_ip  # Remove if you want to use builtin-in MQTT broker
+  birth_message:
+    topic: 'hass/status'
+    payload: 'online'
+  will_message:
+    topic: 'hass/status'
+    payload: 'offline'
+# Cloud
+cloud:
+  google_actions:
+    filter:
+      include_domains:
+        - light
+        - switch
+        - camera
+        - input_select
+        - climate
+        - group
+        - shell_command
+        - input_select
+        - input_boolean
+      include_entities:
+        - climate.thermostat
+        - light.tafellamp_1
+        - light.tafellamp_2
+        - light.tafellamp_3
+
+alarm_control_panel:
+  - platform: manual_mqtt
+    state_topic: home/alarm
+    command_topic: home/alarm/set
+    pending_time: 30
+    delay_time: 20
+    trigger_time: 4
+    disarmed:
+      trigger_time: 0
+    armed_home:
+      pending_time: 0
+      delay_time: 0
+    triggered:
+      pending_time: 0
+
+variable:
+  garden_pic_name:
+    value: ''
+    restore: true
+  garden_pic_url:
+    value: ''
+    restore: true
+  frontdoor_pic_url:
+    value: ''
+    restore: true
+  frontdoor_pic_name:
+    value: ''
+    restore: true
+  doorbell_text:
+    value: 'jeej'
+    restore: true
+system_health:
+
+
+monitor_docker:
+  - name: Docker
+    containers:
+      - unifi-controller
+      - home-assistant_system
+      - gitea_server_1
+      - dev_pma
+      - dev_mysql
+      - adguard-home
+      - cloud9
+    rename:
+      unifi-controller: Unifi
+      gitea_server_1: "Gitea"
+      dev_pma: PHPMyAdmin
+      dev_mysql: "Mysql"
+      home-assistant_system: Home Assistant
+      adguard-home: AdGuard
+      cloud9: Cloud9
+    monitored_conditions:
+      - version
+      - containers_running
+      - containers_total
+      - status
+      - memory

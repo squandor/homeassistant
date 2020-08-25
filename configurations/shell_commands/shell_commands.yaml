@@ -1,0 +1,25 @@
+
+kitchen_led_paars: curl --silent -k "http://{{ ip_kitchen_led }}/api/setColors?red=200&green=0&blue=193"
+kitchen_led_rood: curl --silent -k "http://{{ ip_kitchen_led }}/api/setColors?red=255&green=0&blue=0"
+kitchen_led_groen: curl --silent -k "http://{{ ip_kitchen_led }}/api/setColors?red=0&green=255&blue=0"
+kitchen_led_wit: curl --silent -k "http://{{ ip_kitchen_led }}/api/setColors?red=255&green=255&blue=255"
+kitchen_led_blauw: curl --silent -k "http://{{ ip_kitchen_led }}/api/setColors?red=0&green=0&blue=255"
+kitchen_led_off: curl --silent -k "http://{{ ip_kitchen_led }}/api/setColors?red=0&green=0&blue=0"
+
+amp_receiver_tv: curl --silent -k "http://{{ ip_denon_receiver_ip }}:5000/api/action?action=switch_aux"
+amp_receiver_airplay: curl --silent -k "http://{{ ip_denon_receiver_ip }}:5000/api/action?action=switch_cd"
+
+turn_tv_on: curl --silent -k "http://{{ ip_denon_receiver_ip }}:5000/api/action?action=tv_power"
+turn_tv_off: "python /var/scripts/controlLG.py 1"
+
+run_transip_update: "/usr/bin/php /var/scripts/transip/transip-dyndns/dyndns.php"
+
+login_music_server: curl --silent -k "http://{{ forked_daapd_serverip_port_ip }}/login?pairing-guid=0x1&request-session-id=50"
+startplaylist_music_server: curl --silent -k "http://{{ forked_daapd_serverip_port_ip }}/ctrl-int/1/playspec?database-spec='dmap.persistentid:0x1'&container-spec='dmap.persistentid:0x6E'&container-item-spec='dmap.containeritemid:0x1C03'&session-id=50"
+logout_music_server: curl --silent -k "http://{{ forked_daapd_serverip_port_ip }}/logout?session-id=50"
+speaker_google_home_slaapkamer_on: curl --silent -k -X PUT "http://{{ forked_daapd_serverip_port_ip }}/api/outputs/2343198062" --data "{\"selected\":true,\"volume\":8}"
+speaker_google_home_slaapkamer_volume_up: curl --silent -k -X PUT "http://{{ forked_daapd_serverip_port_ip }}/api/outputs/3905888712" --data "{\"volume\":{{states.sensor.google_home_slaapkamer_volume.state|int + 4}}}"
+
+
+
+  

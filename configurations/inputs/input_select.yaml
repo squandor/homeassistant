@@ -1,0 +1,33 @@
+keuken_led_strip:
+  name: Keuken Ledstrip
+  options:
+    - False
+    - Rood
+    - Groen
+    - Paars
+    - Wit
+    - Blauw
+  initial: False
+
+amp_receiver_input:
+  name: Denon AMP Kanaal
+  options:
+    - TV
+    - Airplay
+  initial: Airplay
+
+camera_cast_select:
+  name: Cast Camera to Chromecast
+  options:
+    - False
+    - Voordeur
+    - Tuin
+    - Babykamer
+  initial: False
+
+spotify_source:
+  name: 'Spotify Source'
+  options:
+    - Google home woonkamer
+    - Google home slaapkamer
+    - Chromecast woonkamer

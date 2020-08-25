@@ -1,0 +1,7 @@
+- platform: mqtt
+  name: doorbellringSwitch
+  state_topic: "home/gang/doorbellring"
+  payload_off: "off"
+  payload_on: "on"
+  optimistic: false
+  command_topic: "home/gang/doorbellring/set"

@@ -1,0 +1,213 @@
+## Template for SMA
+- platform: template
+  sensors:
+    pv_power_lovelace:
+      friendly_name: 'Huidige opbrengst'
+      value_template: "{{ states.sensor.pv_power.state | replace('unknown','0') }}"
+
+## Templates to calculate daily power consumption
+- platform: template
+  sensors:
+    todays_power_consumption_low:
+      value_template: >
+        {{ (float(states.sensor.energy_consumption_tarif_1.state) - float(states.input_number.midnight_power_consumption_low.state)) | round(3) }}
+      unit_of_measurement: 'kWh'
+      friendly_name: "Today's Power Consumption Low"
+
+- platform: template
+  sensors:
+    todays_power_consumption_normal:
+      value_template: >
+        {{ (float(states.sensor.energy_consumption_tarif_2.state) - float(states.input_number.midnight_power_consumption_normal.state)) | round(3) }}
+      unit_of_measurement: 'kWh'
+      friendly_name: "Today's Power Consumption Normal"
+
+- platform: template
+  sensors:
+    todays_power_consumption:
+      value_template: >
+        {{ ((float(states.sensor.energy_consumption_tarif_2.state) - float(states.input_number.midnight_power_consumption_normal.state)) +
+           (float(states.sensor.energy_consumption_tarif_1.state) - float(states.input_number.midnight_power_consumption_low.state))) | round(3) }}
+      unit_of_measurement: 'kWh'
+      friendly_name: "Elektriciteit"
+
+## Templates to calculate daily power production
+- platform: template
+  sensors:
+    todays_power_production_low:
+      value_template: >
+        {{ (float(states.sensor.energy_production_tarif_1.state) - float(states.input_number.midnight_power_production_low.state)) | round(3) }}
+      unit_of_measurement: 'kWh'
+      friendly_name: "Today's Power Production Low"
+
+- platform: template
+  sensors:
+    todays_power_production_normal:
+      value_template: >
+        {{ (float(states.sensor.energy_production_tarif_2.state) - float(states.input_number.midnight_power_production_normal.state)) | round(3) }}
+      unit_of_measurement: 'kWh'
+      friendly_name: "Today's Power Production Normal"
+
+- platform: template
+  sensors:
+    todays_power_production:
+      value_template: >
+        {{ ((float(states.sensor.energy_production_tarif_2.state) - float(states.input_number.midnight_power_production_normal.state)) +
+           (float(states.sensor.energy_production_tarif_1.state) - float(states.input_number.midnight_power_production_low.state))) | round(3) }}
+      unit_of_measurement: 'kWh'
+      friendly_name: "Teruglevering"
+
+## Templates to calculate daily gas consumption
+- platform: template
+  sensors:
+    todays_gas_consumption:
+      value_template: >
+        {{ (float(states.sensor.gas_consumption.state) - float(states.input_number.midnight_gas_consumption.state)) | round(3) }}
+      unit_of_measurement: 'm3'
+      friendly_name: "Gas"
+- platform: template
+  sensors:
+    today_rain_mm:
+      value_template:
+        0.0
+
+## Euro's
+- platform: template
+  sensors:
+    todays_gas_price:
+      value_template: >
+        {{ ((float(states.sensor.gas_consumption.state) - float(states.input_number.midnight_gas_consumption.state)) | float * 0.75909 ) | round(2) }}
+      unit_of_measurement: 'euro'
+      friendly_name: "Gas kosten"
+
+- platform: template
+  sensors:
+    todays_power_price:
+      value_template: >
+        {{ (((float(states.sensor.power_consumption_normal.state) - float(states.input_number.midnight_power_consumption_normal.state)) +
+           (float(states.sensor.power_consumption_low.state) - float(states.input_number.midnight_power_consumption_low.state))) | float * 0.23121 ) | round(2) }}
+      unit_of_measurement: 'euro'
+      friendly_name: "Elektriciteit kosten"
+
+- platform: template
+  sensors:
+    todays_power_production_price:
+      value_template: >
+        {{ (((float(states.sensor.power_production_normal.state) - float(states.input_number.midnight_power_production_normal.state)) +
+           (float(states.sensor.power_production_low.state) - float(states.input_number.midnight_power_production_low.state))) | float * 0.06 ) | round(2) }}
+      unit_of_measurement: 'euro'
+      friendly_name: "Elektriciteit opbrengst"
+
+- platform: template
+  sensors:
+    solaredge_energy_this_year_kwh:
+      value_template: '{{(states.sensor.solaredge_energy_this_year.state | float / 1000) | round(2)}} kWh'
+
+- platform: template
+  sensors:
+    solaredge_energy_this_month_kwh:
+      value_template: '{{(states.sensor.solardge_energy_this_month.state | float / 1000) | round(2)}} kWh'
+
+- platform: template
+  sensors:
+      old_kitchen_led_color:
+        value_template:
+            'False'
+- platform: template
+  sensors:
+    garden_needs_water:
+      value_template:
+        'False'
+
+- platform: template
+  sensors:
+    time_of_day:
+      value_template: >
+        {% set current_hour = strptime(states('sensor.time'), "%H:%M").hour %}
+        {% if current_hour < 6 %}
+          Night
+        {% elif 6 <= current_hour < 12 %}
+          Morning
+        {% elif 12 <= current_hour < 18 %}
+          Afternoon
+        {% else %}
+          Evening
+        {% endif %}
+- platform: template
+  sensors:
+    ripple_price:
+      value_template:
+        '0.0'
+    ripple_total_value:
+      unit_of_measurement: " Euro"
+      value_template:
+        '0.0'
+    ripple_percentage:
+      value_template:
+        '0.0'
+    markant_seats:
+      value_template:
+        '0'
+- platform: template
+  sensors:
+    afval_oudpapier:
+      value_template:
+        '01-01-2019'
+    afval_groen:
+      value_template:
+        '01-01-2019'
+    afval_restafval:
+      value_template:
+        '01-01-2019'
+    afval_plastic:
+      value_template:
+        '01-01-2019'
+    afval_compost:
+      value_template:
+        '01-01-2019'
+- platform: template
+  sensors:
+    afval_oudpapier_6_dagen:
+      value_template:
+        '{{as_timestamp(now()) <= as_timestamp(strptime(states.sensor.afval_oudpapier.state + " 00:00:00", "%d-%m-%Y %H:%M:%S")) <= (as_timestamp(now())+ (518400))}}'
+    afval_groen_6_dagen:
+      value_template:
+        '{{as_timestamp(now()) <= as_timestamp(strptime(states.sensor.afval_groen.state + " 00:00:00", "%d-%m-%Y %H:%M:%S")) <= (as_timestamp(now())+ (518400))}}'
+    afval_plastic_6_dagen:
+      value_template:
+        '{{as_timestamp(now()) <= as_timestamp(strptime(states.sensor.afval_plastic.state + " 00:00:00", "%d-%m-%Y %H:%M:%S")) <= (as_timestamp(now())+ (518400))}}'
+    afval_restafval_6_dagen:
+      value_template:
+        '{{as_timestamp(now()) <= as_timestamp(strptime(states.sensor.afval_restafval.state + " 00:00:00", "%d-%m-%Y %H:%M:%S")) <= (as_timestamp(now())+ (518400))}}'
+    motion_frontdoor_activated:
+      value_template:
+        'off'
+    motion_backdoor_activated:
+      value_template:
+        'off'
+
+- platform: template
+  sensors:
+    squandor_distance_home:
+      friendly_name: Afstand Sander van Thuis
+      value_template: '{{ distance(states.device_tracker.squandor_gps_2_2) }} km'
+
+- platform: template
+  sensors:
+    alarm_time:
+      friendly_name: 'Time'
+      value_template: '{{ states.input_number.alarmhour.state|int }}:{% if states.input_number.alarmminutes.state|length == 1%}00{% endif %}{{ states.input_number.alarmminutes.state|int }}'
+- platform: template
+  sensors:
+    octoprint_remain_minutes:
+      friendly_name: 'Octoprint job in minutes'
+      value_template: '{{"{:02d}:{:02d}:{:02d}".format((states("sensor.octoprint_time_remaining") | int // 3600) % 24, (states("sensor.octoprint_time_remaining") | int % 3600) // 60, (states("sensor.octoprint_time_remaining") | int % 3600) % 60) }}'
+      unit_of_measurement: 'minutes'
+- platform: template
+  sensors:
+    frontdoor_motion_state:
+      friendly_name: 'Voordeur motion state sensor'
+      value_template: 'on'
+    backdoor_motion_state:
+      friendly_name: 'Tuin motion state sensor'
+      value_template: 'on'

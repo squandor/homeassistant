@@ -1,0 +1,42 @@
+title: My Awesome Home
+views:
+    # View tab title.
+  - title: Example
+    cards:
+        # The markdown card will render markdown text.
+      - type: markdown
+        title: Lovelace
+        content: >
+          Welcome to your **Lovelace UI**.
+
+  - title: Music
+    icon: mdi:library-music
+    cards:
+
+      - type: media-control
+        title: Music Server
+        entity: media_player.music_server
+
+      # Speakers
+      - type: conditional
+        conditions:
+          - entity: media_player.music_server
+            state: "playing"
+        card:
+          type: entities
+          title: Speakers
+          show_header_toggle: false
+          column_width: 50%
+          entities:
+            - entity: switch.speaker_badkamer
+              name: Badkamer
+              icon: mdi:airplay
+              tap_action: toggle
+            - entity: input_number.speaker_badkamer_volume_slider
+              name: Badkamer Volume
+            - entity: switch.speaker_woonkamer
+              name: Woonkamer
+              tap_action: toggle
+            - entity: input_number.speaker_woonkamer_volume_slider
+              name: Woonkamer Volume
+

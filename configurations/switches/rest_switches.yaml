@@ -1,0 +1,44 @@
+# - platform: rest
+#   name: Speaker Badkamer
+#   resource: http://192.168.1.5:3689/api/outputs/149264091607026
+#   method: PUT
+#   body_on: '{"selected": true}'
+#   body_off: '{"selected": false}'
+#   is_on_template: '{% if value_json is defined %} {{ value_json.selected }} {% else %} off {% endif %}'
+#   scan_interval: 5
+# # 
+# - platform: rest
+#   name:  Speaker Woonkamer
+#   resource: http://192.168.1.5:3689/api/outputs/234532918189543
+#   method: PUT
+#   body_on: '{"selected": true}'
+#   body_off: '{"selected": false}'
+#   is_on_template: '{% if value_json is defined %} {{ value_json.selected }} {% else %} off {% endif %}'
+#   scan_interval: 5
+
+# - platform: rest
+#   name:  Chromecast woonkamer
+#   resource: http://192.168.1.5:3689/api/outputs/3624734410
+#   method: PUT
+#   body_on: '{"selected": true}'
+#   body_off: '{"selected": false}'
+#   is_on_template: '{% if value_json is defined %} {{ value_json.selected }} {% else %} off {% endif %}'
+#   scan_interval: 5
+
+# - platform: rest
+#   name:  Google home woonkamer
+#   resource: http://192.168.1.5:3689/api/outputs/3905888712
+#   method: PUT
+#   body_on: '{"selected": true}'
+#   body_off: '{"selected": false}'
+#   is_on_template: '{% if value_json is defined %} {{ value_json.selected }} {% else %} off {% endif %}'
+#   scan_interval: 5
+
+# - platform: rest
+#   name:  Google home slaapkamer
+#   resource: http://192.168.1.5:3689/api/outputs/2343198062
+#   method: PUT
+#   body_on: '{"selected": true}'
+#   body_off: '{"selected": false}'
+#   is_on_template: '{% if value_json is defined %} {{ value_json.selected }} {% else %} off {% endif %}'
+#   scan_interval: 5

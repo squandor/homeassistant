@@ -1,0 +1,63 @@
+- alias: If its gonna rain
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.uden_precipitation_forecast_average
+    above: 0.0
+  action:
+  - service: python_script.set_state
+    data_template:
+      entity_id: sensor.old_kitchen_led_color
+      state: '{{ states.input_select.keuken_led_strip.state }}'
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.keuken_led_strip
+      option: Blauw
+  - service: python_script.set_state
+    data_template:
+      entity_id: sensor.today_rain_mm
+      state: '{{ ((float(states.sensor.today_rain_mm.state) | float) + (float(states.sensor.uden_precipitation_forecast_average.state)
+        | float)) | round(2) }}'
+  id: 91b30bda787f406b92a71a2976d10b16
+- alias: If rain stops
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.uden_precipitation_forecast_average
+    below: 0.1
+  action:
+  - service: input_select.select_option
+    entity_id: input_select.keuken_led_strip
+    data_template:
+      option: '{{ states.sensor.old_kitchen_led_color.state }}'
+  id: 87aec6b178904605a011fe8019495956
+- alias: check_garden_water
+  trigger:
+  - platform: time
+    at: 01:00:00
+  condition:
+    condition: or
+    conditions:
+    - condition: numeric_state
+      entity_id: sensor.today_rain_mm
+      below: 1.0
+  action:
+  - service: notify.telegram_home
+    data:
+      message: er moet gesproeid worden
+  - service: homeassistant.turn_on
+    entity_id: switch.tuinsproeier_switch
+  - service: python_script.set_state
+    data_template:
+      entity_id: sensor.today_rain_mm
+      state: '{{0.0 | round(2)}}'
+  id: b6eaaf69560e4bc9b96990bb30a0ba2a
+- id: b6f0346bfd8b44a3ad39ce6e3cfa46b3
+  alias: check_garden_water_20min
+  trigger:
+  - entity_id: switch.tuinsproeier_switch
+    for: 0:20:00
+    platform: state
+    to: 'on'
+  action:
+  - entity_id: switch.tuinsproeier_switch
+    service: homeassistant.turn_off
+  mode: restart

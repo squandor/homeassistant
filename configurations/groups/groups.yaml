@@ -1,0 +1,21 @@
+meter_readings:
+  name: Meter readings
+  entities:
+    - sensor.power_consumption_low
+    - sensor.power_consumption_normal
+    - sensor.power_production_low
+    - sensor.power_production_normal
+    - sensor.gas_consumption
+
+default_view:
+#  view: yes
+  entities:
+    - group.alarmclock
+alarmclock:
+  name: Wake Me Up
+  entities:
+    - sensor.alarm_time
+    - input_slider.alarmhour
+    - input_slider.alarmminutes
+    - input_boolean.alarmstatus
+    - input_boolean.alarmweekday

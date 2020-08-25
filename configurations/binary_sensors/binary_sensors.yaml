@@ -1,0 +1,19 @@
+- platform: ping
+  name: frontroomtelevision
+  host: !secret tv_woonkamer
+  scan_interval: 30
+
+- platform: template
+  sensors:
+    external_ip_diff:
+      friendly_name: External IP Diff
+      value_template: "{{(states.sensor.external_ip.state) == (states.sensor.vpn_digitalforensic_nl.state)}}"
+    wasmachine_state:
+      friendly_name: Wasmachine Status
+      value_template: "{{states('sensor.wasmachine_current')|float > 0.0 }}"
+      icon_template: >-
+          {% if is_state("binary_sensor.wasmachine_state", "on") %}
+            mdi:washing-machine
+          {% else %}
+            mdi:washing-machine-off
+          {% endif %}

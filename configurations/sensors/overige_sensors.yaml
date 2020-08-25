@@ -1,0 +1,42 @@
+- platform: yr
+
+- platform: dsmr
+  port: /dev/ttyUSB0
+  dsmr_version: 5
+
+- platform: buienradar
+  name: !secret home_town
+  timeframe: 10
+  monitored_conditions:
+    - stationname
+    - conditioncode
+    - condition
+    - conditiondetailed
+    - conditionexact
+    - symbol
+    - humidity
+    - temperature
+    - groundtemperature
+    - windspeed
+    - windforce
+    - winddirection
+    - windazimuth
+    - pressure
+    - visibility
+    - windgust
+    - precipitation
+    - irradiance
+    - precipitation_forecast_average
+    - precipitation_forecast_total
+
+
+- platform: gitea
+  token: !secret gitea_token
+  host: !secret gitea_url
+  protocol: https
+  port: !secret gitea_port
+  repositories:
+    - path: !secret repo_1
+    - path: !secret repo_2
+    - path: !secret repo_3
+    - path: !secret repo_4

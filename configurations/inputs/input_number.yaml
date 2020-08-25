@@ -1,0 +1,76 @@
+speaker_badkamer_volume_slider:
+  name: Badkamer volume
+  min: 0
+  max: 100
+  step: 1
+
+speaker_pcsander_volume_slider:
+  name: PCSander volume
+  min: 0
+  max: 100
+  step: 1
+
+speaker_woonkamer_volume_slider:
+  name: Woonkamer volume
+  min: 0
+  max: 100
+  step: 1
+
+speaker_chromecastwoonkamer_volume_slider:
+  name: Chromecast Woonkamer volume
+  min: 0
+  max: 100
+  step: 1
+
+speaker_gghwoonkamer_volume_slider:
+  name: Google home woonkamer volume
+  min: 0
+  max: 100
+  step: 1
+
+speaker_gghslaapkamer_volume_slider:
+  name: Google home slaapkamer volume
+  min: 0
+  max: 100
+  step: 1
+
+## Input variables for calculating daily power consumption
+midnight_power_consumption_low:
+  name: Midnight Power Level Low
+  min: 0
+  max: 999999999
+midnight_power_consumption_normal:
+  name: Midnight Power Level Normal
+  min: 0
+  max: 999999999
+
+## Input variables for calculating daily power production
+midnight_power_production_low:
+  name: Midnight Power Level Low
+  min: 0
+  max: 999999999
+midnight_power_production_normal:
+  name: Midnight Power Level Normal
+  min: 0
+  max: 999999999
+
+## Input variables for calculating daily gas consumption
+midnight_gas_consumption:
+  name: Midnight Gas Level
+  min: 0
+  max: 999999999
+
+alarmhour:
+  name: Hour
+  icon: mdi:timer-outline
+  initial: 9
+  min: 0
+  max: 23
+  step: 1
+alarmminutes:
+  name: Minutes
+  icon: mdi:timer-outline
+  initial: 0
+  min: 0
+  max: 59
+  step: 1

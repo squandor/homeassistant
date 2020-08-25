@@ -1,0 +1,17 @@
+motion_woonkamer:
+  name: Beweging woonkamer
+  entities:
+    - binary_sensor.bewegingsensor_woonkamer_occupancy
+    - binary_sensor.motion_woonkamer_2_occupancy
+    - binary_sensor.motion_woonkamer_3_occupancy
+
+contacts_woonkamer:
+  name: Contacts woonkamer
+  entities:
+    - binary_sensor.deur_woonkamer_contact
+
+deur_sensors_gang:
+  name: gang deur sensors
+  entities:
+    - binary_sensor.deur_woonkamer_contact
+    - binary_sensor.voordeur_contact
