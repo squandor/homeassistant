@@ -301,11 +301,11 @@ See *all* my automations and its dependencies [down the page](#automations---tab
 <!-- start-automations -->
 ## Automations - Table of Content
 1. [Afval 🗑](#afval-) (4 automations)
-1. [Security 👮‍♂️🚨](#security-) (4 automations)
+1. [Security 👮‍♂️🚨](#security-) (3 automations)
 1. [System 🖥](#system-) (2 automations)
 1. [Camera 📷](#camera-) (12 automations)
 1. [Light 💡](#light-) (6 automations)
-1. [Octoprint 🖨️](#octoprint-) (1 automations)
+1. [Octoprint 🖨️](#octoprint-) (2 automations)
 1. [Weather ⛅](#weather-) (4 automations)
 1. [Motion 👞](#motion-) (10 automations)
 1. [Sun ☀️](#sun-) (4 automations)
@@ -341,9 +341,6 @@ See *all* my automations and its dependencies [down the page](#automations---tab
 
 
 #### [Send notification when alarm triggered](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/alarm_automations.yaml#L40)
-
-
-#### [Anet a8 smoke detector](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/alarm_automations.yaml#L49)
 
 
 
@@ -423,6 +420,9 @@ See *all* my automations and its dependencies [down the page](#automations---tab
 
 ## [Octoprint 🖨️](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/octoprint_automations.yaml)
 #### [Message if octoprint finished](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/octoprint_automations.yaml#L1)
+
+
+#### [Anet a8 smoke detector](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/octoprint_automations.yaml#L11)
 
 
 
