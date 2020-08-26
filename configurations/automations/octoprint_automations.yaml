@@ -1,4 +1,4 @@
-- alias: message if octoprint finished
+- alias: 'Octoprint: message if octoprint finished'
   trigger:
   - platform: numeric_state
     entity_id: sensor.octoprint_job_percentage

@@ -1,4 +1,4 @@
-- alias: Nobody Home
+- alias: 'Presence: Nobody Home'
   trigger:
     platform: state
     entity_id: group.people
@@ -16,7 +16,7 @@
     data:
       message: Nobody home
   id: 6a84ee467daf4f4e9f12b4fada6bc898
-- alias: Something turned on while leaving
+- alias: 'Presence: Something turned on while leaving'
   trigger:
     platform: state
     entity_id: group.people
@@ -46,7 +46,7 @@
 
         '
   id: f5e6b07e44034244ae60f1b19780de95
-- alias: Nobody home 10 min. switch tv
+- alias: 'Presence: Nobody home 10 min. switch tv'
   trigger:
     platform: state
     entity_id: group.people
@@ -61,7 +61,7 @@
   - service: homeassistant.turn_off
     entity_id: switch.tv_livingroom
   id: 6f41214295f54fe199279f7597f4f3e0
-- alias: Someone Home motion before sunset
+- alias: 'Presence: Someone Home motion before sunset'
   trigger:
     platform: state
     entity_id: group.people
@@ -79,7 +79,7 @@
     data:
       message: Someone is home
   id: aade30a5e1ff404c876a3dc23c816994
-- alias: Someone home motion after sunset
+- alias: 'Presence: Someone home motion after sunset'
   trigger:
     platform: state
     entity_id: group.people

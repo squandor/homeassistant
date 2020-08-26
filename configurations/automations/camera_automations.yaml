@@ -1,4 +1,4 @@
-- alias: camera_cast_select_voordeur
+- alias: 'Camera: camera_cast_select_voordeur'
   trigger:
     platform: state
     entity_id: input_select.camera_cast_select
@@ -11,7 +11,7 @@
       media_content_id: '{{states("variable.frontdoor_pic_url")}}'
       media_content_type: image/jpg
   id: d7fa39f2356d4a4f9da208ea625b420c
-- alias: camera_cast_select_tuin
+- alias: 'Camera: camera_cast_select_tuin'
   trigger:
     platform: state
     entity_id: input_select.camera_cast_select
@@ -22,7 +22,7 @@
       entity_id: camera.tuin
       media_player: media_player.chromecast_woonkamer
   id: 2628e7239f0c4085827d6ab092bf2f43
-- alias: camera_cast_select_baby
+- alias: 'Camera: camera_cast_select_baby'
   trigger:
     platform: state
     entity_id: input_select.camera_cast_select
@@ -34,7 +34,7 @@
       media_player: media_player.chromecast_woonkamer
   id: a0e1c4d27a8549cab8e44ab6aedbbe91
   
-- alias: send pic on ttgo_motion_dark
+- alias: 'Camera: send pic on ttgo_motion_dark'
   trigger:
   - entity_id: binary_sensor.ttgo_doorbell_pir
     platform: state
@@ -84,7 +84,7 @@
       message: Motion frontdoor
     service: notify.telegram_home
   id: 1e324f4bbcc8418a8241b694ad70e529
-- alias: send pic on ttgo_motion_light
+- alias: 'Camera: send pic on ttgo_motion_light'
   trigger:
   - entity_id: binary_sensor.ttgo_doorbell_pir
     platform: state
@@ -135,7 +135,7 @@
     service: notify.telegram_home
   id: 93aede1794354ee5a6ad6eea8d980455
 - id: 10677f69ff0b4c1faafffa18960974ae
-  alias: send pic on ttgo doorbell_overdag
+  alias: 'Camera: send pic on ttgo doorbell_overdag'
   trigger:
   - entity_id: binary_sensor.ttgo_doorbell_button
     from: 'off'
@@ -196,7 +196,7 @@
     - media_player.woonkamer_hub
     service: media_player.turn_off
 - id: 10677f69ff0b4c1faafffa18960974afeeeee
-  alias: send pic on ttgo doorbell_avond
+  alias: 'Camera: send pic on ttgo doorbell_avond'
   trigger:
   - entity_id: binary_sensor.ttgo_doorbell_button
     from: 'off'
@@ -254,7 +254,7 @@
   - entity_id:
     - media_player.woonkamer_hub
     service: media_player.turn_off
-- alias: send picture on doorbell
+- alias: 'Camera: send picture on doorbell'
   trigger:
     platform: state
     entity_id: binary_sensor.deurbel_sensor_2
@@ -317,7 +317,7 @@
     - media_player.woonkamer_hub
   id: 1bd671eb9d354097acf2d29c539724e4
 - id: '1582840785346'
-  alias: motion_ttgo_doorbell
+  alias: 'Camera: motion_ttgo_doorbell'
   description: ''
   trigger:
   - device_id: e2c4ed7b00a441008f4c9fd9d58496c6
@@ -332,7 +332,7 @@
       variable: doorbell_text
     service: variable.set_variable
 - id: '1583022507045'
-  alias: motion text reset ttgo doorbell
+  alias: 'Camera: motion text reset ttgo doorbell'
   description: ''
   trigger:
   - device_id: e2c4ed7b00a441008f4c9fd9d58496c6
@@ -351,7 +351,7 @@
       variable: doorbell_text
     service: variable.set_variable
 - id: edc6e89ca14b4fd99d477323fa3e3c7e
-  alias: webhook endpoint to motion backdoor nas
+  alias: 'Camera: webhook endpoint to motion backdoor nas'
   trigger:
   - platform: webhook
     webhook_id: motion_backdoor
@@ -387,7 +387,7 @@
       title: ''
     service: notify.telegram_home
 - id: f104953f047d423c8bdf62aa1bc66ad9
-  alias: Webhook endpoint to motion frontdoor nas
+  alias: 'Camera: Webhook endpoint to motion frontdoor nas'
   trigger:
   - platform: webhook
     webhook_id: motion_entrance

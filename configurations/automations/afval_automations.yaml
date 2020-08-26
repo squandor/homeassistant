@@ -1,4 +1,4 @@
-- alias: check_afval_groen
+- alias: 'Afval:  check afval groen'
   trigger:
   - platform: time
     at: 08:00:00
@@ -13,7 +13,7 @@
     data:
       message: Let op morgen wordt de groene container opgehaald!
   id: 84aabe5f9fa24780b7851d219698c8b8
-- alias: check_afval_restafval
+- alias: 'Afval:  check afval restafval'
   trigger:
   - platform: time
     at: 08:00:00
@@ -28,7 +28,7 @@
     data:
       message: Let op morgen wordt de restafval container opgehaald!
   id: 372b8358ec66401b99a3b5f80beb004c
-- alias: check_afval_papier
+- alias: 'Afval:  check afval papier'
   trigger:
   - platform: time
     at: 08:00:00
@@ -43,7 +43,7 @@
     data:
       message: Let op morgen wordt de papier container opgehaald!
   id: 7f5fbc1047a846d5b9bbb003a60ef47f
-- alias: check_afval_plastic
+- alias: 'Afval:  check afval plastic'
   initial_state: 'true'
   trigger:
   - platform: time

@@ -1,4 +1,4 @@
-- alias: toggle_kas_lamp
+- alias: 'Time: toggle_kas_lamp'
   trigger:
   - platform: time
     at: '10:00:00'
@@ -9,7 +9,7 @@
     entity_id: switch.kerstboom_switch
   id: cc885961f59f490ca93d23a4d9a3e8a7
 
-- alias: Reset power / Gas variables / today_rain
+- alias: 'Time: Reset power / Gas variables / today_rain'
   trigger:
     platform: time
     at: 01:30:00

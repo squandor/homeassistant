@@ -1,4 +1,4 @@
-- alias: Switch gang lampen
+- alias: 'Motion: Switch gang lampen'
   trigger:
     platform: numeric_state
     entity_id: sensor.beweging_gang_burglar
@@ -9,7 +9,7 @@
   id: 89e5366481024451a9bc4a1595bdad37
 
 - id: c1637d730d7046a4b4d5db25f46924d0
-  alias: Turn off light 10 minutes after last movement gang
+  alias: 'Motion: Turn off light 10 minutes after last movement gang'
   trigger:
   - below: '1'
     entity_id: sensor.beweging_gang_burglar
@@ -18,7 +18,7 @@
   action:
   - entity_id: light.gang_lampen
     service: homeassistant.turn_off
-- alias: trigger_ligts_motion_frontdoor_10_minutes
+- alias: 'Motion: trigger_ligts_motion_frontdoor_10_minutes'
   trigger:
   - platform: state
     entity_id: sensor.motion_frontdoor_activated
@@ -35,7 +35,7 @@
       entity_id: sensor.motion_frontdoor_activated
       state: 'off'
   id: 44f96dae236b4f82b6d9ad9858333f8e
-- alias: trigger_lights_motion_door_living_room
+- alias: 'Motion: trigger_lights_motion_door_living_room'
   trigger:
   - platform: state
     entity_id: group.deur_sensors_gang
@@ -48,7 +48,7 @@
     entity_id: light.gang_beneden
   id: be852e3d50464ae5bcf6b5210b7d2822
 
-- alias: Turn off light 5 minutes after gang_beneden on
+- alias: 'Motion: Turn off light 5 minutes after gang_beneden on'
   trigger:
     platform: state
     entity_id: binary_sensor.beweging_gang_lux_occupancy
@@ -58,7 +58,7 @@
     entity_id: light.gang_beneden
   id: 52e93ae98b02425083e8082ac68ad71011
   
-- alias: Turn off light 5 minutes after gang_beneden on
+- alias: 'Motion: Turn off light 5 minutes after gang_beneden on'
   trigger:
     platform: state
     entity_id: light.gang_beneden
@@ -70,7 +70,7 @@
     entity_id: light.gang_beneden
   id: 52e93ae98b02425083e8082ac68ad710
 
-- alias: Wasmachine is klaar
+- alias: 'Sensor: Wasmachine is klaar'
   trigger:
   - platform: state
     entity_id: binary_sensor.wasmachine_state
@@ -86,7 +86,7 @@
         photo:
           file: /config/www/img/wasmachine_done.jpg
   id: 87f2c7f85a54462383eb4de36a8f0b61
-- alias: Wasmachine gaat weer beginnen
+- alias: 'Sensor: Wasmachine gaat weer beginnen'
   trigger:
   - platform: state
     entity_id: binary_sensor.wasmachine_state
@@ -103,7 +103,7 @@
           file: /config/www/img/wasmachine_running.jpg
   id: f0975aeecfd24327841533146953a011
 - id: 507b15c277b6455e8111071f9b5d4677
-  alias: woonkamer motion lights
+  alias: 'Motion: woonkamer motion lights'
   trigger:
   - entity_id: group.motion_woonkamer
     platform: state
@@ -124,7 +124,7 @@
   - entity_id: light.woonkamer_spots
     service: homeassistant.turn_on
 - id: a643cf39bc2446f1872813b424d79a08
-  alias: turn woonkamer spots off 30 minutes after last movement
+  alias: 'Motion: turn woonkamer spots off 30 minutes after last movement'
   trigger:
   - entity_id: group.motion_woonkamer
     for: 0:30:00

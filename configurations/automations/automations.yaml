@@ -1,4 +1,4 @@
-- alias: update dns record transip
+- alias: 'System: update dns record transip'
   trigger:
   - platform: time_pattern
     minutes: /01
@@ -15,7 +15,7 @@
   - service: script.update_transip
   id: c85f1e5b262b4a78878701e5f3007872
 
-- alias: Wake Me Up
+- alias: 'Wakeup: Wake Me Up'
   trigger:
     platform: template
     value_template: '{{ states.sensor.time.state == strptime(states.sensor.alarm_time.state,

@@ -1,5 +1,5 @@
 - id: 2b365fd0862d4bc6a6b041cb6a237570
-  alias: Trigger alarm while armed away
+  alias: 'Security: Trigger alarm while armed away'
   trigger:
   - entity_id: group.deur_sensors_gang
     from: 'off'
@@ -18,7 +18,7 @@
   - entity_id: alarm_control_panel.ha_alarm
     service: alarm_control_panel.alarm_trigger
 - id: 5cc94c0074004f5cbbfd461a72fa3bd1
-  alias: Trigger alarm while armed at night
+  alias: 'Security: Trigger alarm while armed at night'
   trigger:
   - entity_id: binary_sensor.voordeur_contact
     from: 'off'
@@ -37,7 +37,7 @@
     entity_id: alarm_control_panel.ha_alarm
     service: alarm_control_panel.alarm_trigger
 - id: 640e1525c8044f88884242d54e3fbdbd
-  alias: Send notification when alarm triggered
+  alias: 'Security: Send notification when alarm triggered'
   trigger:
   - entity_id: alarm_control_panel.ha_alarm
     platform: state
@@ -46,7 +46,7 @@
   - data:
       message: ALARM! The alarm has been triggered
     service: notify.telegram_home
-- alias: anet a8 smoke detector
+- alias: 'Octoprint: anet a8 smoke detector'
   trigger:
     platform: state
     entity_id: binary_sensor.anet_a8_rookmelder_smoke
