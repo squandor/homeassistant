@@ -1,6 +1,18 @@
 
 # Squandor Home Assistant config files
 
+## Images
+### Home page
+![home_page](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/raw/branch/master/www/img/home_page.png)
+
+### Sensor page
+![sensor_page](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/raw/branch/master/www/img/sensor_page.png)
+
+### Server page
+![server_page](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/raw/branch/master/www/img/server_page.png)
+
+### Printer page
+![printer_page](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/raw/branch/master/www/img/printer_page.png)
 
 ## Noteworthy (useful) automations
 See *all* my automations and its dependencies [down the page](#automations---table-of-content)!
