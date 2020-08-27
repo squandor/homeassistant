@@ -31,24 +31,19 @@ See *all* my automations and its dependencies [down the page](#automations---tab
     </thead>
     <tbody>
         <tr>
-            <td>TP-Link HS110</td>
-            <td>3</td>
-            <td>70.84</td>
-        </tr>
-        <tr>
-            <td>Xiaomi Aqara Magic Cube</td>
-            <td>1</td>
-            <td>11.08</td>
-        </tr>
-        <tr>
-            <td>Xiaomi Aqara Single Button</td>
-            <td>4</td>
-            <td>57.38</td>
-        </tr>
-        <tr>
             <td>Philips Hue Dimmer switch</td>
             <td>2</td>
             <td>33.22</td>
+        </tr>
+        <tr>
+            <td>Fibaro switch</td>
+            <td>1</td>
+            <td>52.0</td>
+        </tr>
+        <tr>
+            <td>Z wave Wireless EU Smart Power Plug Socket</td>
+            <td>5</td>
+            <td>117.79</td>
         </tr>
         <tr>
             <td>&nbsp;</td>
@@ -66,47 +61,23 @@ See *all* my automations and its dependencies [down the page](#automations---tab
     <tbody>
         <tr>
             <td>Xiaomi Aqara Door Sensor</td>
-            <td>4</td>
-            <td>32.71</td>
-        </tr>
-        <tr>
-            <td>Xiaomi Aqara Temperature Sensor</td>
-            <td>5</td>
-            <td>45.74</td>
+            <td>2</td>
+            <td>16.3</td>
         </tr>
         <tr>
             <td>Xiaomi Aqara Motion Sensor</td>
-            <td>6</td>
-            <td>61.13</td>
+            <td>4</td>
+            <td>40.72</td>
         </tr>
         <tr>
-            <td>Xiaomi Aqara Vibration Sensor</td>
+            <td>AEON LABS MULTISENSOR 6 Z-WAVE PLUS</td>
             <td>1</td>
-            <td>11.59</td>
+            <td>69.95</td>
         </tr>
         <tr>
-            <td>Xiaomi Mi Flora</td>
-            <td>3</td>
-            <td>46.63</td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-    </tbody>
-    <thead>
-        <tr>
-            <th>Vacuum 🧹</th>
-            <th>Units (#)</th>
-            <th>Price (€)</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Xiaomi Mi Roborock S5</td>
+            <td>Xiaomi Mijia Honeywell Fire Alarm Detector </td>
             <td>1</td>
-            <td>294.31</td>
+            <td>25.41</td>
         </tr>
         <tr>
             <td>&nbsp;</td>
@@ -123,19 +94,29 @@ See *all* my automations and its dependencies [down the page](#automations---tab
     </thead>
     <tbody>
         <tr>
-            <td>KEF LS50 Wireless speakers</td>
-            <td>1</td>
-            <td>nan</td>
+            <td>Raspberry Pi</td>
+            <td>2</td>
+            <td>75.9</td>
         </tr>
         <tr>
-            <td>KEF LSX speakers</td>
-            <td>1</td>
-            <td>nan</td>
+            <td>Google Chromecast</td>
+            <td>2</td>
+            <td>78.0</td>
         </tr>
         <tr>
-            <td>LG OLED 55 C9</td>
+            <td>Google Home</td>
             <td>1</td>
-            <td>nan</td>
+            <td>89.0</td>
+        </tr>
+        <tr>
+            <td>Google Home mini</td>
+            <td>3</td>
+            <td>146.97</td>
+        </tr>
+        <tr>
+            <td>Google nest HUB</td>
+            <td>1</td>
+            <td>81.0</td>
         </tr>
         <tr>
             <td>&nbsp;</td>
@@ -152,34 +133,62 @@ See *all* my automations and its dependencies [down the page](#automations---tab
     </thead>
     <tbody>
         <tr>
-            <td>Philips Hue E27 White and Color</td>
-            <td>12</td>
-            <td>266.7</td>
+            <td>Philips Hue GU10 White</td>
+            <td>3</td>
+            <td>52.5</td>
         </tr>
         <tr>
-            <td>Philips Hue E14 White and Color</td>
-            <td>2</td>
-            <td>69.77</td>
+            <td>Philips Hue GU10 White and Color</td>
+            <td>3</td>
+            <td>127.41</td>
         </tr>
         <tr>
-            <td>Philips Hue GU10 Ambient White</td>
-            <td>5</td>
-            <td>(92.70)</td>
+            <td>Ikea tradfri GU10 400 lumen</td>
+            <td>10</td>
+            <td>149.9</td>
         </tr>
         <tr>
-            <td>Philips Hue Go</td>
+            <td>Simple lightstrip + raspberry pi</td>
             <td>1</td>
-            <td>57.05</td>
+            <td>67.95</td>
         </tr>
         <tr>
-            <td>Philips Hue LED strip 2m</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>Camera 📷</th>
+            <th>Units (#)</th>
+            <th>Price (€)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Foscam Outdoor IP-camera</td>
             <td>2</td>
-            <td>86.39</td>
+            <td>138.0</td>
         </tr>
         <tr>
-            <td>Philips Hue LED strip 1m</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>Doorbell 🚪</th>
+            <th>Units (#)</th>
+            <th>Price (€)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Basic video doorbell slimveiligwonen.nl</td>
             <td>1</td>
-            <td>13.84</td>
+            <td>75.0</td>
         </tr>
         <tr>
             <td>&nbsp;</td>
@@ -196,9 +205,14 @@ See *all* my automations and its dependencies [down the page](#automations---tab
     </thead>
     <tbody>
         <tr>
-            <td>ConBee II</td>
+            <td>Zigbee2mqtt</td>
             <td>1</td>
-            <td>39.95</td>
+            <td>46.89</td>
+        </tr>
+        <tr>
+            <td>AEON LABS USB Z-WAVE PLUS CONTROLLER</td>
+            <td>1</td>
+            <td>52.45</td>
         </tr>
         <tr>
             <td>&nbsp;</td>
@@ -215,24 +229,43 @@ See *all* my automations and its dependencies [down the page](#automations---tab
     </thead>
     <tbody>
         <tr>
-            <td>Raspberry Pi 4, 4GB RAM, with Supervised Home Assistant</td>
+            <td>Apple mac mini 2009</td>
             <td>1</td>
-            <td>70.9</td>
+            <td>75.0</td>
         </tr>
         <tr>
-            <td>Raspberry Pi 4 FLIRC Case</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>Network 🖧</th>
+            <th>Units (#)</th>
+            <th>Price (€)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Ubiquiti UniFi Security Gateway</td>
             <td>1</td>
-            <td>25.85</td>
+            <td>109.0</td>
         </tr>
         <tr>
-            <td>SanDisk Ultra microSDHC Memory Card 32GB</td>
+            <td>Ubiquiti UniFi Switch 8-60W</td>
             <td>1</td>
-            <td>6.99</td>
+            <td>134.99</td>
         </tr>
         <tr>
-            <td>Raspberry Pi 3 Model B (connected to power/gas meter and connected over MQTT to main HA instance)</td>
+            <td>Ubiquiti UniFi AP-AC-PRO-E</td>
+            <td>2</td>
+            <td>278.0</td>
+        </tr>
+        <tr>
+            <td>TP-Link TL-SG1016D 16-port 1GB switch</td>
             <td>1</td>
-            <td>40.4</td>
+            <td>49.9</td>
         </tr>
         <tr>
             <td>&nbsp;</td>
@@ -249,8 +282,18 @@ See *all* my automations and its dependencies [down the page](#automations---tab
     </thead>
     <tbody>
         <tr>
-            <td>iPhone X with the new iOS app</td>
+            <td>Android phones</td>
             <td>2</td>
+            <td>nan</td>
+        </tr>
+        <tr>
+            <td>GPSLogger Webhook</td>
+            <td>2</td>
+            <td>nan</td>
+        </tr>
+        <tr>
+            <td>Unifi AP tracker</td>
+            <td>1</td>
             <td>nan</td>
         </tr>
         <tr>
@@ -268,11 +311,6 @@ See *all* my automations and its dependencies [down the page](#automations---tab
     </thead>
     <tbody>
         <tr>
-            <td>PlayStation Eye Webcam and Microphone array</td>
-            <td>1</td>
-            <td>14.95</td>
-        </tr>
-        <tr>
             <td>DSMR - Slimme Meter kabel</td>
             <td>1</td>
             <td>19.95</td>
@@ -283,6 +321,11 @@ See *all* my automations and its dependencies [down the page](#automations---tab
             <td>48.81</td>
         </tr>
         <tr>
+            <td>Synology DS216SE</td>
+            <td>1</td>
+            <td>134.99</td>
+        </tr>
+        <tr>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
@@ -291,7 +334,7 @@ See *all* my automations and its dependencies [down the page](#automations---tab
     <thead>
         <tr>
             <th>Total</th>
-            <th>€1426.18</th>
+            <th>€2387.0</th>
             <th></th>
         </tr>
     </thead>
