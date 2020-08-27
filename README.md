@@ -26,6 +26,7 @@ See *all* my automations and its dependencies [down the page](#automations---tab
         <tr>
             <th>Switches 🎚</th>
             <th>Units (#)</th>
+            <th>Price per unit (€)</th>
             <th>Price (€)</th>
         </tr>
     </thead>
@@ -33,19 +34,29 @@ See *all* my automations and its dependencies [down the page](#automations---tab
         <tr>
             <td>Philips Hue Dimmer switch</td>
             <td>2</td>
+            <td>16.61</td>
             <td>33.22</td>
         </tr>
         <tr>
             <td>Fibaro switch</td>
             <td>1</td>
             <td>52.0</td>
+            <td>52.0</td>
         </tr>
         <tr>
             <td>Z wave Wireless EU Smart Power Plug Socket</td>
             <td>5</td>
+            <td>23.56</td>
             <td>117.79</td>
         </tr>
         <tr>
+            <td><i><b>Total</b></i></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>203.01</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
@@ -55,6 +66,7 @@ See *all* my automations and its dependencies [down the page](#automations---tab
         <tr>
             <th>Sensors 🌡</th>
             <th>Units (#)</th>
+            <th>Price per unit (€)</th>
             <th>Price (€)</th>
         </tr>
     </thead>
@@ -62,24 +74,35 @@ See *all* my automations and its dependencies [down the page](#automations---tab
         <tr>
             <td>Xiaomi Aqara Door Sensor</td>
             <td>2</td>
+            <td>8.15</td>
             <td>16.3</td>
         </tr>
         <tr>
             <td>Xiaomi Aqara Motion Sensor</td>
             <td>4</td>
+            <td>10.18</td>
             <td>40.72</td>
         </tr>
         <tr>
             <td>AEON LABS MULTISENSOR 6 Z-WAVE PLUS</td>
             <td>1</td>
             <td>69.95</td>
+            <td>69.95</td>
         </tr>
         <tr>
             <td>Xiaomi Mijia Honeywell Fire Alarm Detector </td>
             <td>1</td>
             <td>25.41</td>
+            <td>25.41</td>
         </tr>
         <tr>
+            <td><i><b>Total</b></i></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>152.38</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
@@ -89,6 +112,7 @@ See *all* my automations and its dependencies [down the page](#automations---tab
         <tr>
             <th>Media player 📺🔈</th>
             <th>Units (#)</th>
+            <th>Price per unit (€)</th>
             <th>Price (€)</th>
         </tr>
     </thead>
@@ -96,29 +120,41 @@ See *all* my automations and its dependencies [down the page](#automations---tab
         <tr>
             <td>Raspberry Pi</td>
             <td>2</td>
+            <td>37.95</td>
             <td>75.9</td>
         </tr>
         <tr>
             <td>Google Chromecast</td>
             <td>2</td>
+            <td>39.0</td>
             <td>78.0</td>
         </tr>
         <tr>
             <td>Google Home</td>
             <td>1</td>
             <td>89.0</td>
+            <td>89.0</td>
         </tr>
         <tr>
             <td>Google Home mini</td>
             <td>3</td>
+            <td>48.99</td>
             <td>146.97</td>
         </tr>
         <tr>
             <td>Google nest HUB</td>
             <td>1</td>
             <td>81.0</td>
+            <td>81.0</td>
         </tr>
         <tr>
+            <td><i><b>Total</b></i></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>470.87</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
@@ -128,6 +164,7 @@ See *all* my automations and its dependencies [down the page](#automations---tab
         <tr>
             <th>Lights 💡</th>
             <th>Units (#)</th>
+            <th>Price per unit (€)</th>
             <th>Price (€)</th>
         </tr>
     </thead>
@@ -135,24 +172,35 @@ See *all* my automations and its dependencies [down the page](#automations---tab
         <tr>
             <td>Philips Hue GU10 White</td>
             <td>3</td>
+            <td>17.5</td>
             <td>52.5</td>
         </tr>
         <tr>
             <td>Philips Hue GU10 White and Color</td>
             <td>3</td>
+            <td>42.47</td>
             <td>127.41</td>
         </tr>
         <tr>
             <td>Ikea tradfri GU10 400 lumen</td>
             <td>10</td>
+            <td>14.99</td>
             <td>149.9</td>
         </tr>
         <tr>
             <td>Simple lightstrip + raspberry pi</td>
             <td>1</td>
             <td>67.95</td>
+            <td>67.95</td>
         </tr>
         <tr>
+            <td><i><b>Total</b></i></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>397.76</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
@@ -162,6 +210,7 @@ See *all* my automations and its dependencies [down the page](#automations---tab
         <tr>
             <th>Camera 📷</th>
             <th>Units (#)</th>
+            <th>Price per unit (€)</th>
             <th>Price (€)</th>
         </tr>
     </thead>
@@ -169,9 +218,17 @@ See *all* my automations and its dependencies [down the page](#automations---tab
         <tr>
             <td>Foscam Outdoor IP-camera</td>
             <td>2</td>
+            <td>69.0</td>
             <td>138.0</td>
         </tr>
         <tr>
+            <td><i><b>Total</b></i></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>138.0</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
@@ -181,6 +238,7 @@ See *all* my automations and its dependencies [down the page](#automations---tab
         <tr>
             <th>Doorbell 🚪</th>
             <th>Units (#)</th>
+            <th>Price per unit (€)</th>
             <th>Price (€)</th>
         </tr>
     </thead>
@@ -189,8 +247,16 @@ See *all* my automations and its dependencies [down the page](#automations---tab
             <td>Basic video doorbell slimveiligwonen.nl</td>
             <td>1</td>
             <td>75.0</td>
+            <td>75.0</td>
         </tr>
         <tr>
+            <td><i><b>Total</b></i></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>75.0</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
@@ -200,6 +266,7 @@ See *all* my automations and its dependencies [down the page](#automations---tab
         <tr>
             <th>Hubs 🌎</th>
             <th>Units (#)</th>
+            <th>Price per unit (€)</th>
             <th>Price (€)</th>
         </tr>
     </thead>
@@ -208,13 +275,22 @@ See *all* my automations and its dependencies [down the page](#automations---tab
             <td>Zigbee2mqtt</td>
             <td>1</td>
             <td>46.89</td>
+            <td>46.89</td>
         </tr>
         <tr>
             <td>AEON LABS USB Z-WAVE PLUS CONTROLLER</td>
             <td>1</td>
             <td>52.45</td>
+            <td>52.45</td>
         </tr>
         <tr>
+            <td><i><b>Total</b></i></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>99.34</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
@@ -224,6 +300,7 @@ See *all* my automations and its dependencies [down the page](#automations---tab
         <tr>
             <th>Server 🖥</th>
             <th>Units (#)</th>
+            <th>Price per unit (€)</th>
             <th>Price (€)</th>
         </tr>
     </thead>
@@ -232,8 +309,16 @@ See *all* my automations and its dependencies [down the page](#automations---tab
             <td>Apple mac mini 2009</td>
             <td>1</td>
             <td>75.0</td>
+            <td>75.0</td>
         </tr>
         <tr>
+            <td><i><b>Total</b></i></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>75.0</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
@@ -243,6 +328,7 @@ See *all* my automations and its dependencies [down the page](#automations---tab
         <tr>
             <th>Network 🖧</th>
             <th>Units (#)</th>
+            <th>Price per unit (€)</th>
             <th>Price (€)</th>
         </tr>
     </thead>
@@ -251,23 +337,34 @@ See *all* my automations and its dependencies [down the page](#automations---tab
             <td>Ubiquiti UniFi Security Gateway</td>
             <td>1</td>
             <td>109.0</td>
+            <td>109.0</td>
         </tr>
         <tr>
             <td>Ubiquiti UniFi Switch 8-60W</td>
             <td>1</td>
             <td>134.99</td>
+            <td>134.99</td>
         </tr>
         <tr>
             <td>Ubiquiti UniFi AP-AC-PRO-E</td>
             <td>2</td>
+            <td>139.0</td>
             <td>278.0</td>
         </tr>
         <tr>
             <td>TP-Link TL-SG1016D 16-port 1GB switch</td>
             <td>1</td>
             <td>49.9</td>
+            <td>49.9</td>
         </tr>
         <tr>
+            <td><i><b>Total</b></i></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>571.89</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
@@ -277,6 +374,7 @@ See *all* my automations and its dependencies [down the page](#automations---tab
         <tr>
             <th>Device tracker 🔍</th>
             <th>Units (#)</th>
+            <th>Price per unit (€)</th>
             <th>Price (€)</th>
         </tr>
     </thead>
@@ -285,18 +383,22 @@ See *all* my automations and its dependencies [down the page](#automations---tab
             <td>Android phones</td>
             <td>2</td>
             <td>nan</td>
+            <td>nan</td>
         </tr>
         <tr>
             <td>GPSLogger Webhook</td>
             <td>2</td>
+            <td>nan</td>
             <td>nan</td>
         </tr>
         <tr>
             <td>Unifi AP tracker</td>
             <td>1</td>
             <td>nan</td>
+            <td>nan</td>
         </tr>
         <tr>
+            <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
@@ -306,6 +408,7 @@ See *all* my automations and its dependencies [down the page](#automations---tab
         <tr>
             <th>Other</th>
             <th>Units (#)</th>
+            <th>Price per unit (€)</th>
             <th>Price (€)</th>
         </tr>
     </thead>
@@ -314,18 +417,28 @@ See *all* my automations and its dependencies [down the page](#automations---tab
             <td>DSMR - Slimme Meter kabel</td>
             <td>1</td>
             <td>19.95</td>
+            <td>19.95</td>
         </tr>
         <tr>
             <td>Nodo-Shop – OpenTherm Gateway (OTGW) with NodeMCU</td>
             <td>1</td>
+            <td>48.81</td>
             <td>48.81</td>
         </tr>
         <tr>
             <td>Synology DS216SE</td>
             <td>1</td>
             <td>134.99</td>
+            <td>134.99</td>
         </tr>
         <tr>
+            <td><i><b>Total</b></i></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>203.75</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
@@ -334,8 +447,9 @@ See *all* my automations and its dependencies [down the page](#automations---tab
     <thead>
         <tr>
             <th>Total</th>
-            <th>€2387.0</th>
             <th></th>
+            <th></th>
+            <th>€2387.0</th>
         </tr>
     </thead>
 </table>
