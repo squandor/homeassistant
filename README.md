@@ -1,6 +1,6 @@
 
-# Squandor Home Assistant config files
-
+# Squandor Home Assistant config
+Hi there! This is my home assistant configuration. If you have any suggestions, improvements or questions just open a [new issue](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/issues).
 ## Images
 ### Home page
 ![home_page](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/raw/branch/master/www/img/home_page.png)
