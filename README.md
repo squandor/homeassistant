@@ -460,7 +460,7 @@ See *all* my automations and its dependencies [down the page](#automations---tab
 1. [Afval 🗑](#afval-) (4 automations)
 1. [Security 👮‍♂️🚨](#security-) (3 automations)
 1. [System 🖥](#system-) (2 automations)
-1. [Calendar 📅](#calendar-) (1 automations)
+1. [Calendar 📅](#calendar-) (2 automations)
 1. [Camera 📷](#camera-) (12 automations)
 1. [Light 💡](#light-) (6 automations)
 1. [Octoprint 🖨️](#octoprint-) (2 automations)
@@ -474,7 +474,7 @@ See *all* my automations and its dependencies [down the page](#automations---tab
 1. [Media player 🔈📺](#media-player-) (6 automations)
 
 
-⚠️ Total number of automations: **75** ⚠️
+⚠️ Total number of automations: **76** ⚠️
 
 ## [Afval 🗑](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/afval_automations.yaml)
 #### [ check afval groen](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/afval_automations.yaml#L1)
@@ -513,7 +513,10 @@ See *all* my automations and its dependencies [down the page](#automations---tab
 
 
 ## [Calendar 📅](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/calendar_automations.yaml)
-#### [Send notification on event](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/calendar_automations.yaml#L1)
+#### [Send notification on event central calendar](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/calendar_automations.yaml#L1)
+
+
+#### [Send notification on event digi](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/calendar_automations.yaml#L18)
 
 
 

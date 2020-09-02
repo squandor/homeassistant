@@ -1,0 +1,33 @@
+- alias: 'Calendar: send notification on event central calendar'
+  trigger:
+  - platform: state
+    entity_id: calendar.centrale_agenda
+    to: 'on'
+  action:
+  - service: notify.telegram_home
+    data_template:
+      message: "
+        Event is starting:\n
+        Event: {{ state_attr('calendar.centrale_agenda', 'message') }} \n
+        Location: {{ state_attr('calendar.centrale_agenda', 'location') }} \n
+        Start: {{ as_timestamp(state_attr('calendar.centrale_agenda', 'start_time')) | timestamp_custom('%H:%M') }} \n
+        End: {{ as_timestamp(state_attr('calendar.centrale_agenda', 'end_time')) | timestamp_custom('%H:%M') }}
+        "
+  id: c85f1e5b262b4a78878701e5f3007fd872
+
+- alias: 'Calendar: send notification on event digi'
+  trigger:
+  - platform: state
+    entity_id: calendar.s_schins_digitaal_rechercheurs_nl
+    to: 'on'
+  action:
+  - service: notify.telegram_home
+    data_template:
+      message: "
+        Event is starting:\n
+        Event: {{ state_attr('calendar.s_schins_digitaal_rechercheurs_nl', 'message') }} \n
+        Location: {{ state_attr('calendar.s_schins_digitaal_rechercheurs_nl', 'location') }} \n
+        Start: {{ as_timestamp(state_attr('calendar.s_schins_digitaal_rechercheurs_nl', 'start_time')) | timestamp_custom('%H:%M') }} \n
+        End: {{ as_timestamp(state_attr('calendar.s_schins_digitaal_rechercheurs_nl', 'end_time')) | timestamp_custom('%H:%M') }}
+        "
+  id: c85f1e5b262b4a78878701e5f3007fdfd872
