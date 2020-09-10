@@ -465,7 +465,7 @@ See *all* my automations and its dependencies [down the page](#automations---tab
 1. [Light 💡](#light-) (6 automations)
 1. [Octoprint 🖨️](#octoprint-) (2 automations)
 1. [Weather ⛅](#weather-) (4 automations)
-1. [Motion 👞](#motion-) (10 automations)
+1. [Motion 👞](#motion-) (12 automations)
 1. [Sun ☀️](#sun-) (4 automations)
 1. [Light 💡](#light-) (12 automations)
 1. [System 🖥](#system-) (2 automations)
@@ -474,7 +474,7 @@ See *all* my automations and its dependencies [down the page](#automations---tab
 1. [Media player 🔈📺](#media-player-) (6 automations)
 
 
-⚠️ Total number of automations: **76** ⚠️
+⚠️ Total number of automations: **78** ⚠️
 
 ## [Afval 🗑](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/afval_automations.yaml)
 #### [ check afval groen](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/afval_automations.yaml#L1)
@@ -610,34 +610,40 @@ See *all* my automations and its dependencies [down the page](#automations---tab
 
 
 ## [Motion 👞](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml)
-#### [Switch gang lampen](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L1)
+#### [Switch toilet beneden](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L1)
 
 
-#### [Turn off light 10 minutes after last movement gang](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L12)
+#### [Switch toilet beneden off after 5 min.](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L15)
 
 
-#### [Trigger_ligts_motion_frontdoor_10_minutes](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L21)
+#### [Switch gang lampen](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L30)
 
 
-#### [Trigger_lights_motion_door_living_room](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L38)
+#### [Turn off light 10 minutes after last movement gang](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L41)
 
 
-#### [Turn off light 5 minutes after gang_beneden on](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L51)
+#### [Trigger_ligts_motion_frontdoor_10_minutes](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L50)
 
 
-#### [Turn off light 5 minutes after gang_beneden on](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L51)
+#### [Trigger_lights_motion_door_living_room](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L67)
 
 
-#### [Wasmachine is klaar](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L73)
+#### [Turn on light gang_beneden on](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L80)
 
 
-#### [Wasmachine gaat weer beginnen](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L89)
+#### [Turn off light 5 minutes after gang_beneden](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L90)
 
 
-#### [Woonkamer motion lights](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L106)
+#### [Wasmachine is klaar](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L102)
 
 
-#### [Turn woonkamer spots off 30 minutes after last movement](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L127)
+#### [Wasmachine gaat weer beginnen](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L118)
+
+
+#### [Woonkamer motion lights](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L135)
+
+
+#### [Turn woonkamer spots off 30 minutes after last movement](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L156)
 
 
 

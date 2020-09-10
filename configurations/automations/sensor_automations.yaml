@@ -1,3 +1,32 @@
+- alias: 'Motion: switch toilet beneden'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_wc_beneden_occupancy
+    to: 'on'
+  condition:
+    condition: state
+    entity_id: light.wc_beneden_light
+    state: 'off'
+  action:
+  - service: homeassistant.turn_on
+    entity_id: light.wc_beneden_light
+  id: 89e5366481024451a9bc4a1595bdad3712312
+
+- alias: 'Motion: switch toilet beneden off after 5 min.'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_wc_beneden_occupancy
+    for: 00:05:00
+    to: 'off'
+  condition:
+    condition: state
+    entity_id: light.wc_beneden_light
+    state: 'on'
+  action:
+  - service: homeassistant.turn_off
+    entity_id: light.wc_beneden_light
+  id: 89e5366481024451a9bc4a1595bdad371231211
+
 - alias: 'Motion: Switch gang lampen'
   trigger:
     platform: numeric_state
@@ -48,7 +77,7 @@
     entity_id: light.gang_beneden
   id: be852e3d50464ae5bcf6b5210b7d2822
 
-- alias: 'Motion: Turn off light 5 minutes after gang_beneden on'
+- alias: 'Motion: Turn on light gang_beneden on'
   trigger:
     platform: state
     entity_id: binary_sensor.beweging_gang_lux_occupancy
@@ -58,7 +87,7 @@
     entity_id: light.gang_beneden
   id: 52e93ae98b02425083e8082ac68ad71011
   
-- alias: 'Motion: Turn off light 5 minutes after gang_beneden on'
+- alias: 'Motion: Turn off light 5 minutes after gang_beneden'
   trigger:
     platform: state
     entity_id: light.gang_beneden
