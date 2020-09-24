@@ -79,9 +79,9 @@ See *all* my automations and its dependencies [down the page](#automations---tab
         </tr>
         <tr>
             <td>Xiaomi Aqara Motion Sensor</td>
-            <td>4</td>
+            <td>5</td>
             <td>10.18</td>
-            <td>40.72</td>
+            <td>50.9</td>
         </tr>
         <tr>
             <td>AEON LABS MULTISENSOR 6 Z-WAVE PLUS</td>
@@ -99,7 +99,7 @@ See *all* my automations and its dependencies [down the page](#automations---tab
             <td><i><b>Total</b></i></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
-            <td>152.38</td>
+            <td>162.56</td>
         </tr>
         <tr>
             <td>&nbsp;</td>
@@ -183,9 +183,9 @@ See *all* my automations and its dependencies [down the page](#automations---tab
         </tr>
         <tr>
             <td>Ikea tradfri GU10 400 lumen</td>
-            <td>10</td>
+            <td>11</td>
             <td>14.99</td>
-            <td>149.9</td>
+            <td>164.89</td>
         </tr>
         <tr>
             <td>Simple lightstrip + raspberry pi</td>
@@ -197,7 +197,7 @@ See *all* my automations and its dependencies [down the page](#automations---tab
             <td><i><b>Total</b></i></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
-            <td>397.76</td>
+            <td>412.75</td>
         </tr>
         <tr>
             <td>&nbsp;</td>
@@ -449,7 +449,7 @@ See *all* my automations and its dependencies [down the page](#automations---tab
             <th>Total</th>
             <th></th>
             <th></th>
-            <th>€2387.0</th>
+            <th>€2412.17</th>
         </tr>
     </thead>
 </table>
@@ -466,6 +466,7 @@ See *all* my automations and its dependencies [down the page](#automations---tab
 1. [Octoprint 🖨️](#octoprint-) (2 automations)
 1. [Weather ⛅](#weather-) (4 automations)
 1. [Motion 👞](#motion-) (12 automations)
+1. [Motion 👞](#motion-) (2 automations)
 1. [Sun ☀️](#sun-) (4 automations)
 1. [Light 💡](#light-) (12 automations)
 1. [System 🖥](#system-) (2 automations)
@@ -474,7 +475,7 @@ See *all* my automations and its dependencies [down the page](#automations---tab
 1. [Media player 🔈📺](#media-player-) (6 automations)
 
 
-⚠️ Total number of automations: **78** ⚠️
+⚠️ Total number of automations: **80** ⚠️
 
 ## [Afval 🗑](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/afval_automations.yaml)
 #### [ check afval groen](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/afval_automations.yaml#L1)
@@ -644,6 +645,15 @@ See *all* my automations and its dependencies [down the page](#automations---tab
 
 
 #### [Turn woonkamer spots off 30 minutes after last movement](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L156)
+
+
+
+
+## [Motion 👞](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/speaker_automations.yaml)
+#### [Select automatic speaker select livingroom on](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/speaker_automations.yaml#L1)
+
+
+#### [Select automatic speaker select livingroom off](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/speaker_automations.yaml#L28)
 
 
 
