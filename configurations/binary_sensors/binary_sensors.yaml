@@ -17,3 +17,11 @@
           {% else %}
             mdi:washing-machine-off
           {% endif %}
+
+- platform: template
+  sensors:
+    forked_daapd_is_playing:
+      entity_id:
+        - media_player.forked_daapd_server
+      value_template: '{% if states.media_player.forked_daapd_server.state == "playing" %}on{% else %}off{% endif %}'
+      friendly_name: Forked daapd is active

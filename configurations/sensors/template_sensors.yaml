@@ -191,7 +191,11 @@
     squandor_distance_home:
       friendly_name: Afstand Sander van Thuis
       value_template: '{{ distance(states.device_tracker.squandor_gps_2_2) }} km'
-
+- platform: template
+  sensors:
+    auto_speaker_selection:
+      friendly_name: Automatische speaker selectie
+      value_template: 'on'
 - platform: template
   sensors:
     alarm_time:

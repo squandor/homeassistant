@@ -1,0 +1,50 @@
+- alias: 'Motion: Select automatic speaker select livingroom on'
+  trigger:
+  - entity_id: group.motion_woonkamer
+    platform: state
+    to: 'on'
+  condition:
+  - condition: and
+    conditions:
+    - condition: template
+      value_template: >
+        {{ now().timestamp() - as_timestamp(states.binary_sensor.forked_daapd_is_playing.last_changed) > 60 }}
+    - condition: state
+      entity_id: media_player.forked_daapd_output_speaker_woonkamer
+      state: 'off'
+    - condition: template
+      value_template: >
+        {{ now().timestamp() - as_timestamp(states.group.motion_woonkamer.last_changed) < 1800 }}
+    - condition: state
+      entity_id: binary_sensor.forked_daapd_is_playing
+      state: 'on'
+    - condition: state
+      entity_id: switch.auto_speaker_selection
+      state: 'on'
+  action:
+  - entity_id: media_player.forked_daapd_output_speaker_woonkamer
+    service: homeassistant.turn_on
+
+- alias: 'Motion: Select automatic speaker select livingroom off'
+  trigger:
+  - entity_id: group.motion_woonkamer
+    platform: state
+    to: 'off'
+  condition:
+  - condition: and
+    conditions:
+    - condition: template
+      value_template: >
+        {{ now().timestamp() - as_timestamp(states.binary_sensor.forked_daapd_is_playing.last_changed) > 60 }}
+    - condition: state
+      entity_id: media_player.forked_daapd_output_speaker_woonkamer
+      state: 'on'
+    - condition: template
+      value_template: >
+        {{ now().timestamp() - as_timestamp(states.group.motion_woonkamer.last_changed) > 1800 }}
+    - condition: state
+      entity_id: switch.auto_speaker_selection
+      state: 'on'
+  action:
+  - entity_id: media_player.forked_daapd_output_speaker_woonkamer
+    service: homeassistant.turn_off
