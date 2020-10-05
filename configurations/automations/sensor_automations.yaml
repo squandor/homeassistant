@@ -64,7 +64,7 @@
       entity_id: sensor.motion_frontdoor_activated
       state: 'off'
   id: 44f96dae236b4f82b6d9ad9858333f8e
-- alias: 'Motion: trigger_lights_motion_door_living_room'
+- alias: 'Motion: trigger_hall_lights_motion_door_living_room'
   trigger:
   - platform: state
     entity_id: group.deur_sensors_gang
@@ -159,7 +159,7 @@
     for: 0:30:00
     platform: state
     to: 'off'
-  - above: '100'
+  - above: '70'
     entity_id: sensor.woonkamer_lux
     platform: numeric_state
   condition:
@@ -171,3 +171,16 @@
   action:
   - entity_id: light.woonkamer_spots
     service: homeassistant.turn_off
+- id: a643cf39bc2446f1872813b424d79a08123
+  alias: 'Sensor: change outside temp inside otgw when outside sensor changes'
+  trigger:
+  - entity_id: sensor.uden_temperature
+    platform: state
+  condition:
+    - condition: template
+      value_template: '{{ trigger.to_state.state != states.sensor.outside_temp_opentherm_gw.state }}'
+  action:
+  - service: opentherm_gw.set_outside_temperature
+    data_template:
+      gateway_id: opentherm_gw
+      temperature: '{{ trigger.to_state.state}}'

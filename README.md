@@ -465,7 +465,7 @@ See *all* my automations and its dependencies [down the page](#automations---tab
 1. [Light 💡](#light-) (6 automations)
 1. [Octoprint 🖨️](#octoprint-) (2 automations)
 1. [Weather ⛅](#weather-) (4 automations)
-1. [Motion 👞](#motion-) (12 automations)
+1. [Motion 👞](#motion-) (13 automations)
 1. [Motion 👞](#motion-) (2 automations)
 1. [Sun ☀️](#sun-) (4 automations)
 1. [Light 💡](#light-) (12 automations)
@@ -475,7 +475,7 @@ See *all* my automations and its dependencies [down the page](#automations---tab
 1. [Media player 🔈📺](#media-player-) (6 automations)
 
 
-⚠️ Total number of automations: **80** ⚠️
+⚠️ Total number of automations: **81** ⚠️
 
 ## [Afval 🗑](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/afval_automations.yaml)
 #### [ check afval groen](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/afval_automations.yaml#L1)
@@ -626,7 +626,7 @@ See *all* my automations and its dependencies [down the page](#automations---tab
 #### [Trigger_ligts_motion_frontdoor_10_minutes](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L50)
 
 
-#### [Trigger_lights_motion_door_living_room](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L67)
+#### [Trigger_hall_lights_motion_door_living_room](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L67)
 
 
 #### [Turn on light gang_beneden on](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L80)
@@ -645,6 +645,9 @@ See *all* my automations and its dependencies [down the page](#automations---tab
 
 
 #### [Turn woonkamer spots off 30 minutes after last movement](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L156)
+
+
+#### [Change outside temp inside otgw when outside sensor changes](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L175)
 
 
 
