@@ -168,17 +168,21 @@
 - platform: template
   sensors:
     afval_oudpapier_6_dagen:
-      value_template:
-        '{{as_timestamp(now()) <= as_timestamp(strptime(states.sensor.afval_oudpapier.state + " 00:00:00", "%d-%m-%Y %H:%M:%S")) <= (as_timestamp(now())+ (518400))}}'
+      entity_id:
+        - sensor.afval_oudpapier
+      value_template: '{{as_timestamp(now()) <= as_timestamp(strptime(states.sensor.afval_oudpapier.state + " 00:00:00", "%d-%m-%Y %H:%M:%S")) <= (as_timestamp(now())+ (518400))}}'
     afval_groen_6_dagen:
-      value_template:
-        '{{as_timestamp(now()) <= as_timestamp(strptime(states.sensor.afval_groen.state + " 00:00:00", "%d-%m-%Y %H:%M:%S")) <= (as_timestamp(now())+ (518400))}}'
+      entity_id:
+        - sensor.afval_groen
+      value_template: '{{as_timestamp(now()) <= as_timestamp(strptime(states.sensor.afval_groen.state + " 00:00:00", "%d-%m-%Y %H:%M:%S")) <= (as_timestamp(now())+ (518400))}}'
     afval_plastic_6_dagen:
-      value_template:
-        '{{as_timestamp(now()) <= as_timestamp(strptime(states.sensor.afval_plastic.state + " 00:00:00", "%d-%m-%Y %H:%M:%S")) <= (as_timestamp(now())+ (518400))}}'
+      entity_id:
+        - sensor.afval_plastic
+      value_template: '{{as_timestamp(now()) <= as_timestamp(strptime(states.sensor.afval_plastic.state + " 00:00:00", "%d-%m-%Y %H:%M:%S")) <= (as_timestamp(now())+ (518400))}}'
     afval_restafval_6_dagen:
-      value_template:
-        '{{as_timestamp(now()) <= as_timestamp(strptime(states.sensor.afval_restafval.state + " 00:00:00", "%d-%m-%Y %H:%M:%S")) <= (as_timestamp(now())+ (518400))}}'
+      entity_id:
+        - sensor.afval_restafval
+      value_template: '{{as_timestamp(now()) <= as_timestamp(strptime(states.sensor.afval_restafval.state + " 00:00:00", "%d-%m-%Y %H:%M:%S")) <= (as_timestamp(now())+ (518400))}}'
     motion_frontdoor_activated:
       value_template:
         'off'
@@ -186,11 +190,6 @@
       value_template:
         'off'
 
-- platform: template
-  sensors:
-    squandor_distance_home:
-      friendly_name: Afstand Sander van Thuis
-      value_template: '{{ distance(states.device_tracker.squandor_gps_2_2) }} km'
 - platform: template
   sensors:
     auto_speaker_selection:
