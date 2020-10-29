@@ -13,4 +13,10 @@
   mjpeg_url: !secret octoprint_cam_url
   name: octaprint
 
-
+- platform: generic
+  name: doods_voordeur
+  still_image_url: http://192.168.1.31:8123/local/doods_voordeur.jpg
+- platform: generic
+  name: doods_tuin
+  still_image_url: http://192.168.1.31:8123/local/doods_tuin.jpg
+  
