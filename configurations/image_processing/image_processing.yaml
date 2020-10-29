@@ -1,0 +1,27 @@
+- platform: doods
+  url: !secret doods_url
+  detector: default
+  scan_interval: 2
+  source: 
+    - entity_id: camera.voordeur
+  file_out: /config/www/doods_voordeur.jpg
+  confidence: 70
+  labels:
+    - name: person
+      confidence: 50
+    - name: car
+      confidence: 60
+  
+- platform: doods
+  url: !secret doods_url
+  detector: default
+  scan_interval: 2
+  source: 
+    - entity_id: camera.tuin
+  file_out: /config/www/doods_tuin.jpg
+  confidence: 70
+  labels:
+    - name: person
+      confidence: 50
+    - name: car
+      confidence: 60
