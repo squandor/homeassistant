@@ -7,7 +7,7 @@
   - service: camera.play_stream
     data:
       entity_id: camera.nas_voordeur
-      media_player: media_player.chromecast_woonkamer
+      media_player: media_player.chromecast7566
   id: d7fa39f2356d4a4f9da208ea625b420c
 - alias: 'Camera: camera_cast_select_tuin'
   trigger:
@@ -18,7 +18,7 @@
   - service: camera.play_stream
     data:
       entity_id: camera.nas_tuin
-      media_player: media_player.chromecast_woonkamer
+      media_player: media_player.chromecast7566
   id: 2628e7239f0c4085827d6ab092bf2f43
 
 - alias: 'Camera: send picture on doorbell'
@@ -42,7 +42,7 @@
         {{[url,cam_folder,picname]|join}}
   - service: camera.snapshot
     data:
-      entity_id: camera.voordeur
+      entity_id: camera.nas_voordeur
       filename: /config/www/cam_captures/{{ states('variable.frontdoor_pic_name')}}
   - service: notify.telegram_home
     data:
@@ -69,7 +69,7 @@
   - delay: 00:00:02
   - service: camera.snapshot
     data:
-      entity_id: camera.voordeur
+      entity_id: camera.nas_voordeur
       filename: /config/www/cam_captures/{{ now().strftime("%Y-%m-%d_%H.%M") }}_2.jpg
   - delay: 00:00:02
   - service: notify.telegram_home
@@ -84,47 +84,11 @@
     - media_player.woonkamer_hub
   id: 1bd671eb9d354097acf2d29c539724e4
 
-- id: edc6e89ca14b4fd99d477323fa3e3c7e
-  alias: 'Camera: webhook endpoint to motion backdoor nas'
+- id: 19238901890321809328190382190e
+  alias: 'Camera: Doods motion frontdoor'
   trigger:
-  - platform: webhook
-    webhook_id: motion_backdoor
-  condition:
-  - condition: state
-    entity_id: sensor.backdoor_motion_state
-    state: 'on'
-  action:
-  - data:
-      value_template: '{{ now().strftime("%Y-%m-%d_%H.%M") }}_1.jpg'
-      variable: garden_pic_name
-    service: variable.set_variable
-  - data:
-      value_template: >
-        {% set url = states('input_text.base_url') %}
-        {% set cam_folder = '/local/cam_captures/' %}
-        {% set picname = states('variable.frontdoor_pic_name') %}
-        {{[url,cam_folder,picname]|join}}
-      variable: garden_pic_url
-    service: variable.set_variable
-  - data:
-      entity_id: camera.tuin
-      filename: /config/www/cam_captures/{{ states('variable.garden_pic_name')}}
-    service: camera.snapshot
-  - data:
-      data:
-        photo:
-          file: /config/www/cam_captures/{{ states('variable.garden_pic_name')}}
-      message: ''
-    service: notify.telegram_home
-  - data:
-      message: Beweging gedetecteerd tuin
-      title: ''
-    service: notify.telegram_home
-- id: f104953f047d423c8bdf62aa1bc66ad9
-  alias: 'Camera: Webhook endpoint to motion frontdoor nas'
-  trigger:
-  - platform: webhook
-    webhook_id: motion_entrance
+    - platform: template
+      value_template: '{{ state_attr("image_processing.doods_voordeur", "total_matches") > 0 }}'
   condition:
   - condition: state
     entity_id: sensor.frontdoor_motion_state
@@ -143,7 +107,7 @@
       variable: frontdoor_pic_url
     service: variable.set_variable
   - data:
-      entity_id: camera.voordeur
+      entity_id: camera.nas_voordeur
       filename: /config/www/cam_captures/{{ states('variable.frontdoor_pic_name')}}
     service: camera.snapshot
   - data:
@@ -156,3 +120,112 @@
       message: Beweging gedetecteerd voordeur
       title: ''
     service: notify.telegram_home
+
+- id: 19238901890321809328190382190e
+  alias: 'Camera: Doods motion garden'
+  trigger:
+    - platform: template
+      value_template: "{{ state_attr('image_processing.doods_tuin', 'total_matches') > 0 }}"
+  condition:
+  - condition: state
+    entity_id: sensor.backdoor_motion_state
+    state: 'on'
+  action:
+  - data:
+      value_template: '{{ now().strftime("%Y-%m-%d_%H.%M") }}_1.jpg'
+      variable: garden_pic_name
+    service: variable.set_variable
+  - data:
+      value_template: >
+        {% set url = states('input_text.base_url') %}
+        {% set cam_folder = '/local/cam_captures/' %}
+        {% set picname = states('variable.frontdoor_pic_name') %}
+        {{[url,cam_folder,picname]|join}}
+      variable: garden_pic_url
+    service: variable.set_variable
+  - data:
+      entity_id: camera.nas_tuin
+      filename: /config/www/cam_captures/{{ states('variable.garden_pic_name')}}
+    service: camera.snapshot
+  - data:
+      data:
+        photo:
+          file: /config/www/cam_captures/{{ states('variable.garden_pic_name')}}
+      message: ''
+    service: notify.telegram_home
+  - data:
+      message: Beweging gedetecteerd tuin
+      title: ''
+    service: notify.telegram_home
+# - id: edc6e89ca14b4fd99d477323fa3e3c7e
+#   alias: 'Camera: webhook endpoint to motion backdoor nas'
+#   trigger:
+#   - platform: webhook
+#     webhook_id: motion_backdoor
+#   condition:
+#   - condition: state
+#     entity_id: sensor.backdoor_motion_state
+#     state: 'on'
+#   action:
+#   - data:
+#       value_template: '{{ now().strftime("%Y-%m-%d_%H.%M") }}_1.jpg'
+#       variable: garden_pic_name
+#     service: variable.set_variable
+#   - data:
+#       value_template: >
+#         {% set url = states('input_text.base_url') %}
+#         {% set cam_folder = '/local/cam_captures/' %}
+#         {% set picname = states('variable.frontdoor_pic_name') %}
+#         {{[url,cam_folder,picname]|join}}
+#       variable: garden_pic_url
+#     service: variable.set_variable
+#   - data:
+#       entity_id: camera.nas_tuin
+#       filename: /config/www/cam_captures/{{ states('variable.garden_pic_name')}}
+#     service: camera.snapshot
+#   - data:
+#       data:
+#         photo:
+#           file: /config/www/cam_captures/{{ states('variable.garden_pic_name')}}
+#       message: ''
+#     service: notify.telegram_home
+#   - data:
+#       message: Beweging gedetecteerd tuin
+#       title: ''
+#     service: notify.telegram_home
+# - id: f104953f047d423c8bdf62aa1bc66ad9
+#   alias: 'Camera: Webhook endpoint to motion frontdoor nas'
+#   trigger:
+#   - platform: webhook
+#     webhook_id: motion_entrance
+#   condition:
+#   - condition: state
+#     entity_id: sensor.frontdoor_motion_state
+#     state: 'on'
+#   action:
+#   - data:
+#       value_template: '{{ now().strftime("%Y-%m-%d_%H.%M") }}_1.jpg'
+#       variable: frontdoor_pic_name
+#     service: variable.set_variable
+#   - data:
+#       value_template: >
+#         {% set url = states('input_text.base_url') %}
+#         {% set cam_folder = '/local/cam_captures/' %}
+#         {% set picname = states('variable.frontdoor_pic_name') %}
+#         {{[url,cam_folder,picname]|join}}
+#       variable: frontdoor_pic_url
+#     service: variable.set_variable
+#   - data:
+#       entity_id: camera.nas_voordeur
+#       filename: /config/www/cam_captures/{{ states('variable.frontdoor_pic_name')}}
+#     service: camera.snapshot
+#   - data:
+#       data:
+#         photo:
+#           file: /config/www/cam_captures/{{ states('variable.frontdoor_pic_name')}}
+#       message: ''
+#     service: notify.telegram_home
+#   - data:
+#       message: Beweging gedetecteerd voordeur
+#       title: ''
+#     service: notify.telegram_home
