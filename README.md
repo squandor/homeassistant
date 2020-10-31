@@ -461,7 +461,7 @@ See *all* my automations and its dependencies [down the page](#automations---tab
 1. [Security 👮‍♂️🚨](#security-) (3 automations)
 1. [System 🖥](#system-) (2 automations)
 1. [Calendar 📅](#calendar-) (2 automations)
-1. [Camera 📷](#camera-) (12 automations)
+1. [Camera 📷](#camera-) (5 automations)
 1. [Light 💡](#light-) (6 automations)
 1. [Octoprint 🖨️](#octoprint-) (2 automations)
 1. [Weather ⛅](#weather-) (4 automations)
@@ -475,7 +475,7 @@ See *all* my automations and its dependencies [down the page](#automations---tab
 1. [Media player 🔈📺](#media-player-) (6 automations)
 
 
-⚠️ Total number of automations: **81** ⚠️
+⚠️ Total number of automations: **74** ⚠️
 
 ## [Afval 🗑](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/afval_automations.yaml)
 #### [ check afval groen](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/afval_automations.yaml#L1)
@@ -526,41 +526,16 @@ See *all* my automations and its dependencies [down the page](#automations---tab
 #### [Camera_cast_select_voordeur](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/camera_automations.yaml#L1)
 
 
-#### [Camera_cast_select_tuin](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/camera_automations.yaml#L14)
+#### [Camera_cast_select_tuin](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/camera_automations.yaml#L12)
 
 
-#### [Camera_cast_select_baby](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/camera_automations.yaml#L25)
+#### [Send picture on doorbell](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/camera_automations.yaml#L24)
 
 
-#### [Send pic on ttgo_motion_dark](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/camera_automations.yaml#L37)
+#### [Doods motion frontdoor](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/camera_automations.yaml#L88)
 
 
-#### [Send pic on ttgo_motion_light](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/camera_automations.yaml#L87)
-
-
-#### [Send pic on ttgo doorbell_overdag](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/camera_automations.yaml#L138)
-
-
-#### [Send pic on ttgo doorbell_avond](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/camera_automations.yaml#L199)
-
-
-#### [Send picture on doorbell](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/camera_automations.yaml#L257)
-
-
-#### [Motion_ttgo_doorbell](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/camera_automations.yaml#L320)
-
-  
-
-
-#### [Motion text reset ttgo doorbell](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/camera_automations.yaml#L335)
-
-  
-
-
-#### [Webhook endpoint to motion backdoor nas](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/camera_automations.yaml#L354)
-
-
-#### [Webhook endpoint to motion frontdoor nas](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/camera_automations.yaml#L390)
+#### [Doods motion garden](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/camera_automations.yaml#L125)
 
 
 
