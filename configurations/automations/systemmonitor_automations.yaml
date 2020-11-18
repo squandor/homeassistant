@@ -7,6 +7,10 @@
   - service: notify.telegram_home
     data:
       message: HA memory usage above 80%
+  - service: persistent_notification.create
+    data:
+      message: 'Warning: Memory usage above 80%'
+      title: 'System: Memory usage High'
   id: 1a8cfc0af64e47df897df7c3f3b39cb1
 - alias: 'System: Message if swap is above 80%'
   trigger:
@@ -17,4 +21,8 @@
   - service: notify.telegram_home
     data:
       message: HA swap usage above 80%
+  - service: persistent_notification.create
+    data:
+      message: 'Warning: Swap usage above 80%'
+      title: 'System: Swap usage High'
   id: 917c788f30264861a03d418509b6da88
