@@ -84,7 +84,6 @@ recorder:
       - call_service
 
 frontend:
-  javascript_version: latest
   themes: !include_dir_merge_named themes
 
 # Configure a default setup of Home Assistant (frontend, api, etc)
@@ -103,6 +102,10 @@ discovery:
 weather:
   - platform: buienradar
 stream:
+
+spotify:
+  client_id: !secret spotify_client_id
+  client_secret: !secret spotify_client_secret
 
 # Text to speech
 tts:
@@ -125,6 +128,7 @@ camera: !include_dir_merge_list configurations/cameras/
 binary_sensor: !include_dir_merge_list configurations/binary_sensors/
 device_tracker: !include_dir_merge_list configurations/device_trackers/
 cover: !include_dir_merge_list configurations/covers/
+image_processing: !include configurations/image_processing/image_processing.yaml
 # service: !include configurations/services/services.yaml
 
 python_script:
@@ -188,11 +192,21 @@ cloud:
         - shell_command
         - input_select
         - input_boolean
+        - media_player
+        - cover
       include_entities:
         - climate.thermostat
         - light.tafellamp_1
         - light.tafellamp_2
         - light.tafellamp_3
+      exclude_entities:
+        - switch.docker_unifi_controller
+        - switch.docker_adguard_home
+        - switch.docker_cloud9
+        - switch.docker_gitea_server_1
+        - switch.docker_home_assistant_system
+        - switch.docker_dev_mysql
+        - switch.docker_dev_pma
 
 alarm_control_panel:
   - platform: manual_mqtt
