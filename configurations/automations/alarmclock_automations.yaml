@@ -1,7 +1,8 @@
 - alias: 'Time: Toggle wakup light san'
   trigger:
-  - platform: template
-    value_template: '{{ (((state_attr("sensor.in2013_next_alarm", "Time in Milliseconds")| int / 1000) + 0*60) | timestamp_custom("%Y-%m-%d %H:%M:00")) == ((as_timestamp(now())+ (0) | int) + 0*60) | timestamp_custom("%Y-%m-%d %H:%M:00")}}'
+  - platform: state
+    entity_id: binary_sensor.san_alarm_state
+    to: 'on'
   condition:
   - condition: and
     conditions:
@@ -15,8 +16,9 @@
 
 - alias: 'Time: Toggle wakup light laris'
   trigger:
-  - platform: template
-    value_template: '{{ (((state_attr("sensor.sensor.oneplus_a6003_next_alarm", "Time in Milliseconds")| int / 1000) + 0*60) | timestamp_custom("%Y-%m-%d %H:%M:00")) == ((as_timestamp(now())+ (0) | int) + 0*60) | timestamp_custom("%Y-%m-%d %H:%M:00")}}'
+  - platform: state
+    entity_id: binary_sensor.laris_alarm_state
+    to: 'on'
   condition:
   - condition: and
     conditions:

@@ -21,7 +21,11 @@
 - platform: template
   sensors:
     forked_daapd_is_playing:
-      entity_id:
-        - media_player.forked_daapd_server
       value_template: '{% if states.media_player.forked_daapd_server.state == "playing" %}on{% else %}off{% endif %}'
       friendly_name: Forked daapd is active
+    san_alarm_state:
+      value_template: '{{(((state_attr("sensor.in2013_next_alarm", "Time in Milliseconds")| int / 1000) + 0*60) | timestamp_custom("%Y-%m-%d %H:%M:00")) == ((as_timestamp(now())+ (0) | int) + 0*60) | timestamp_custom("%Y-%m-%d %H:%M:00")}}'
+      friendly_name: Sander Alarm status
+    laris_alarm_state:
+      value_template: '{{(((state_attr("sensor.oneplus_a6003_next_alarm", "Time in Milliseconds")| int / 1000) + 0*60) | timestamp_custom("%Y-%m-%d %H:%M:00")) == ((as_timestamp(now())+ (0) | int) + 0*60) | timestamp_custom("%Y-%m-%d %H:%M:00")}}'
+      friendly_name: Larissa Alarm status
