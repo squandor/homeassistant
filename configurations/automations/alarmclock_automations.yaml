@@ -1,0 +1,17 @@
+- alias: 'Time: Toggle wakup light san'
+  trigger:
+  - platform: template
+    value_template: '{{ (((state_attr("sensor.in2013_next_alarm", "Time in Milliseconds")| int / 1000) + 0*60) | timestamp_custom("%Y-%m-%d %H:%M:00")) == ((as_timestamp(now())+ (1800) | int) + 0*60) | timestamp_custom("%Y-%m-%d %H:%M:00")}}'
+  action:
+  - service: homeassistant.turn_on
+    entity_id: switch.slaapkamer_sand_switch
+  id: cc885961f59f490ca93d23a4d9a123213e8a7
+
+- alias: 'Time: Toggle wakup light laris'
+  trigger:
+  - platform: template
+    value_template: '{{ (((state_attr("sensor.sensor.oneplus_a6003_next_alarm", "Time in Milliseconds")| int / 1000) + 0*60) | timestamp_custom("%Y-%m-%d %H:%M:00")) == ((as_timestamp(now())+ (1800) | int) + 0*60) | timestamp_custom("%Y-%m-%d %H:%M:00")}}'
+  action:
+  - service: homeassistant.turn_on
+    entity_id: switch.slaapkamer_lari_switch
+  id: cc885961f59f4908439021ca93d23a4d9a123213e8a7

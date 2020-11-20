@@ -459,13 +459,14 @@ See *all* my automations and its dependencies [down the page](#automations---tab
 ## Automations - Table of Content
 1. [Afval 🗑](#afval-) (4 automations)
 1. [Security 👮‍♂️🚨](#security-) (3 automations)
+1. [Time ⏲️](#time-) (2 automations)
 1. [System 🖥](#system-) (2 automations)
 1. [Calendar 📅](#calendar-) (2 automations)
 1. [Camera 📷](#camera-) (5 automations)
 1. [Light 💡](#light-) (6 automations)
 1. [Octoprint 🖨️](#octoprint-) (2 automations)
 1. [Weather ⛅](#weather-) (4 automations)
-1. [Motion 👞](#motion-) (13 automations)
+1. [Motion 👞](#motion-) (15 automations)
 1. [Motion 👞](#motion-) (2 automations)
 1. [Sun ☀️](#sun-) (4 automations)
 1. [Light 💡](#light-) (12 automations)
@@ -475,19 +476,19 @@ See *all* my automations and its dependencies [down the page](#automations---tab
 1. [Media player 🔈📺](#media-player-) (6 automations)
 
 
-⚠️ Total number of automations: **74** ⚠️
+⚠️ Total number of automations: **78** ⚠️
 
 ## [Afval 🗑](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/afval_automations.yaml)
 #### [ check afval groen](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/afval_automations.yaml#L1)
 
 
-#### [ check afval restafval](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/afval_automations.yaml#L16)
+#### [ check afval restafval](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/afval_automations.yaml#L21)
 
 
-#### [ check afval papier](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/afval_automations.yaml#L31)
+#### [ check afval papier](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/afval_automations.yaml#L41)
 
 
-#### [ check afval plastic](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/afval_automations.yaml#L46)
+#### [ check afval plastic](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/afval_automations.yaml#L61)
 
 
 
@@ -500,6 +501,15 @@ See *all* my automations and its dependencies [down the page](#automations---tab
 
 
 #### [Send notification when alarm triggered](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/alarm_automations.yaml#L40)
+
+
+
+
+## [Time ⏲️](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/alarmclock_automations.yaml)
+#### [Toggle wakup light san](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/alarmclock_automations.yaml#L1)
+
+
+#### [Toggle wakup light laris](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/alarmclock_automations.yaml#L10)
 
 
 
@@ -622,7 +632,13 @@ See *all* my automations and its dependencies [down the page](#automations---tab
 #### [Turn woonkamer spots off 30 minutes after last movement](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L156)
 
 
-#### [Change outside temp inside otgw when outside sensor changes](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L175)
+#### [Veranda motion lights](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L176)
+
+
+#### [Turn veranda spots off 30 minutes after last movement](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L194)
+
+
+#### [Change outside temp inside otgw when outside sensor changes](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L214)
 
 
 
@@ -694,7 +710,7 @@ See *all* my automations and its dependencies [down the page](#automations---tab
 #### [Message if memory is above 80%](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/systemmonitor_automations.yaml#L1)
 
 
-#### [Message if swap is above 80%](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/systemmonitor_automations.yaml#L11)
+#### [Message if swap is above 80%](https://git.digitaal-rechercheurs.nl:9090/squandor/homeassistant/src/branch/master/configurations/automations/systemmonitor_automations.yaml#L15)
 
 
 
