@@ -1,7 +1,6 @@
-- platform: yr
-
 - platform: dsmr
-  port: /dev/ttyUSB0
+  host: 192.168.1.5
+  port: 2001
   dsmr_version: 5
 
 - platform: buienradar

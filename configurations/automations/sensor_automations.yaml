@@ -171,6 +171,45 @@
   action:
   - entity_id: light.woonkamer_spots
     service: homeassistant.turn_off
+
+- id: 507b15c277b6455e8112311071f9b5d4677
+  alias: 'Motion: veranda motion lights'
+  trigger:
+  - entity_id: group.motion_veranda
+    platform: state
+    to: 'on'
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: light.living_room
+      state: 'off'
+    - below: '30'
+      condition: numeric_state
+      entity_id: sensor.veranda_lux
+  action:
+  - entity_id: light.living_room
+    service: homeassistant.turn_on
+- id: a643cf39bc2446f1872813b424d79131a08
+  alias: 'Motion: turn veranda spots off 30 minutes after last movement'
+  trigger:
+  - entity_id: group.motion_veranda
+    for: 0:30:00
+    platform: state
+    to: 'off'
+  - above: '70'
+    entity_id: sensor.veranda_lux
+    platform: numeric_state
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: light.living_room
+      state: 'on'
+  action:
+  - entity_id: light.living_room
+    service: homeassistant.turn_off
+
 - id: a643cf39bc2446f1872813b424d79a08123
   alias: 'Sensor: change outside temp inside otgw when outside sensor changes'
   trigger:
@@ -178,9 +217,9 @@
     platform: state
   condition:
     - condition: template
-      value_template: '{{ trigger.to_state.state != states.sensor.outside_temp_opentherm_gw.state }}'
+      value_template: '{{ trigger.to_state.state != states.sensor.outside_temp_thermostaat.state }}'
   action:
   - service: opentherm_gw.set_outside_temperature
     data_template:
-      gateway_id: opentherm_gw
+      gateway_id: thermostaat
       temperature: '{{ trigger.to_state.state}}'
