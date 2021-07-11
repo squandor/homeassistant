@@ -50,10 +50,16 @@ See *all* my automations and its dependencies [down the page](#automations---tab
             <td>117.79</td>
         </tr>
         <tr>
+            <td>Ikea Tradfri switches</td>
+            <td>4</td>
+            <td>2.5</td>
+            <td>9.99</td>
+        </tr>
+        <tr>
             <td><i><b>Total</b></i></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
-            <td>203.01</td>
+            <td>213.0</td>
         </tr>
         <tr>
             <td>&nbsp;</td>
@@ -79,9 +85,9 @@ See *all* my automations and its dependencies [down the page](#automations---tab
         </tr>
         <tr>
             <td>Xiaomi Aqara Motion Sensor</td>
-            <td>5</td>
+            <td>7</td>
             <td>10.18</td>
-            <td>50.9</td>
+            <td>71.26</td>
         </tr>
         <tr>
             <td>AEON LABS MULTISENSOR 6 Z-WAVE PLUS</td>
@@ -99,7 +105,7 @@ See *all* my automations and its dependencies [down the page](#automations---tab
             <td><i><b>Total</b></i></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
-            <td>162.56</td>
+            <td>182.92</td>
         </tr>
         <tr>
             <td>&nbsp;</td>
@@ -137,9 +143,9 @@ See *all* my automations and its dependencies [down the page](#automations---tab
         </tr>
         <tr>
             <td>Google Home mini</td>
-            <td>3</td>
-            <td>48.99</td>
-            <td>146.97</td>
+            <td>2</td>
+            <td>98.99</td>
+            <td>197.98</td>
         </tr>
         <tr>
             <td>Google nest HUB</td>
@@ -151,7 +157,7 @@ See *all* my automations and its dependencies [down the page](#automations---tab
             <td><i><b>Total</b></i></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
-            <td>470.87</td>
+            <td>521.88</td>
         </tr>
         <tr>
             <td>&nbsp;</td>
@@ -244,16 +250,16 @@ See *all* my automations and its dependencies [down the page](#automations---tab
     </thead>
     <tbody>
         <tr>
-            <td>Basic video doorbell slimveiligwonen.nl</td>
+            <td>Amcrest AD110</td>
             <td>1</td>
-            <td>75.0</td>
-            <td>75.0</td>
+            <td>151.24</td>
+            <td>151.24</td>
         </tr>
         <tr>
             <td><i><b>Total</b></i></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
-            <td>75.0</td>
+            <td>151.24</td>
         </tr>
         <tr>
             <td>&nbsp;</td>
@@ -306,7 +312,7 @@ See *all* my automations and its dependencies [down the page](#automations---tab
     </thead>
     <tbody>
         <tr>
-            <td>Apple mac mini 2009</td>
+            <td>DL380</td>
             <td>1</td>
             <td>75.0</td>
             <td>75.0</td>
@@ -381,13 +387,13 @@ See *all* my automations and its dependencies [down the page](#automations---tab
     <tbody>
         <tr>
             <td>Android phones</td>
-            <td>2</td>
+            <td>1</td>
             <td>nan</td>
             <td>nan</td>
         </tr>
         <tr>
             <td>GPSLogger Webhook</td>
-            <td>2</td>
+            <td>1</td>
             <td>nan</td>
             <td>nan</td>
         </tr>
@@ -449,7 +455,7 @@ See *all* my automations and its dependencies [down the page](#automations---tab
             <th>Total</th>
             <th></th>
             <th></th>
-            <th>€2412.17</th>
+            <th>€2569.77</th>
         </tr>
     </thead>
 </table>
@@ -459,24 +465,23 @@ See *all* my automations and its dependencies [down the page](#automations---tab
 ## Automations - Table of Content
 1. [Afval 🗑](#afval-) (4 automations)
 1. [Security 👮‍♂️🚨](#security-) (3 automations)
-1. [Time ⏲️](#time-) (2 automations)
-1. [System 🖥](#system-) (2 automations)
+1. [Time ⏲️](#time-) (1 automations)
+1. [System 🖥](#system-) (4 automations)
 1. [Calendar 📅](#calendar-) (2 automations)
-1. [Camera 📷](#camera-) (5 automations)
+1. [Camera 📷](#camera-) (4 automations)
 1. [Light 💡](#light-) (6 automations)
 1. [Octoprint 🖨️](#octoprint-) (3 automations)
 1. [Weather ⛅](#weather-) (4 automations)
-1. [Motion 👞](#motion-) (15 automations)
-1. [Motion 👞](#motion-) (2 automations)
+1. [Motion 👞](#motion-) (18 automations)
+1. [Motion 👞](#motion-) (6 automations)
 1. [Sun ☀️](#sun-) (4 automations)
-1. [Light 💡](#light-) (12 automations)
+1. [Light 💡](#light-) (14 automations)
 1. [System 🖥](#system-) (2 automations)
 1. [Time ⏲️](#time-) (2 automations)
 1. [Presence 🏠](#presence-) (5 automations)
-1. [Media player 🔈📺](#media-player-) (6 automations)
 
 
-⚠️ Total number of automations: **79** ⚠️
+⚠️ Total number of automations: **82** ⚠️
 
 ## [Afval 🗑](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/afval_automations.yaml)
 #### [ check afval groen](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/afval_automations.yaml#L1)
@@ -509,9 +514,6 @@ See *all* my automations and its dependencies [down the page](#automations---tab
 #### [Toggle wakup light san](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/alarmclock_automations.yaml#L1)
 
 
-#### [Toggle wakup light laris](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/alarmclock_automations.yaml#L17)
-
-
 
 
 ## [System 🖥](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/automations.yaml)
@@ -519,6 +521,16 @@ See *all* my automations and its dependencies [down the page](#automations---tab
 
 
 #### [Wake Me Up](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/automations.yaml#L18)
+
+
+#### [Doorbell - Notify avond](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/automations.yaml#L86)
+
+  
+
+
+#### [Doorbell - Notify overdag](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/automations.yaml#L108)
+
+  
 
 
 
@@ -539,13 +551,10 @@ See *all* my automations and its dependencies [down the page](#automations---tab
 #### [Camera_cast_select_tuin](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/camera_automations.yaml#L12)
 
 
-#### [Send picture on doorbell](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/camera_automations.yaml#L24)
+#### [Doods motion frontdoor](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/camera_automations.yaml#L89)
 
 
-#### [Doods motion frontdoor](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/camera_automations.yaml#L88)
-
-
-#### [Doods motion garden](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/camera_automations.yaml#L125)
+#### [Doods motion garden](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/camera_automations.yaml#L127)
 
 
 
@@ -605,43 +614,54 @@ See *all* my automations and its dependencies [down the page](#automations---tab
 #### [Switch toilet beneden off after 5 min.](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L15)
 
 
-#### [Switch gang lampen](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L30)
+#### [Switch keuken lights on](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L30)
 
 
-#### [Turn off light 10 minutes after last movement gang](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L41)
+#### [Keuken lights off after 5 min.](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L49)
 
 
-#### [Trigger_ligts_motion_frontdoor_10_minutes](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L50)
+#### [Switch gang lampen](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L67)
 
 
-#### [Trigger_hall_lights_motion_door_living_room](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L67)
+#### [Turn off light 10 minutes after last movement gang](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L78)
 
 
-#### [Turn on light gang_beneden on](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L80)
+#### [Trigger_ligts_motion_frontdoor_10_minutes](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L87)
 
 
-#### [Turn off light 5 minutes after gang_beneden](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L90)
+#### [Trigger_hall_lights_motion_door_living_room](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L104)
 
 
-#### [Wasmachine is klaar](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L102)
+#### [Turn on light gang_beneden on](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L117)
 
 
-#### [Wasmachine gaat weer beginnen](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L118)
+#### [Turn off light 5 minutes after gang_beneden](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L127)
 
 
-#### [Woonkamer motion lights](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L135)
+#### [Wasmachine is klaar](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L139)
 
 
-#### [Turn woonkamer spots off 30 minutes after last movement](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L156)
+#### [Wasmachine gaat weer beginnen](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L176)
 
 
-#### [Veranda motion lights](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L176)
+#### [Woonkamer motion lights](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L193)
 
 
-#### [Turn veranda spots off 30 minutes after last movement](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L194)
+#### [Turn woonkamer spots off 30 minutes after last movement](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L214)
 
 
-#### [Change outside temp inside otgw when outside sensor changes](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L214)
+#### [Veranda motion lights](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L234)
+
+
+#### [Turn veranda spots off 30 minutes after last movement](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L252)
+
+
+#### [Change outside temp inside otgw when outside sensor changes](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L272)
+
+
+#### [Low battery level detection & notification for all battery sensors](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/sensor_automations.yaml#L285)
+
+  
 
 
 
@@ -651,6 +671,18 @@ See *all* my automations and its dependencies [down the page](#automations---tab
 
 
 #### [Select automatic speaker select livingroom off](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/speaker_automations.yaml#L28)
+
+
+#### [Activate Denon amp when player is playing and speaker selected](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/speaker_automations.yaml#L52)
+
+
+#### [Deactivate Denon amp when player is paused or stopped and amp is on](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/speaker_automations.yaml#L74)
+
+
+#### [Activate Denon amp when woonkamer speaker is selected.](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/speaker_automations.yaml#L92)
+
+
+#### [Deactivate Denon amp when woonkamer speaker is deselected for 5 minutes.](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/speaker_automations.yaml#L113)
 
 
 
@@ -665,7 +697,7 @@ See *all* my automations and its dependencies [down the page](#automations---tab
 #### [Run_at_midnight](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/sun_automations.yaml#L34)
 
 
-#### [Run_at_sunrise](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/sun_automations.yaml#L52)
+#### [Run_at_sunrise](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/sun_automations.yaml#L53)
 
 
 
@@ -683,28 +715,34 @@ See *all* my automations and its dependencies [down the page](#automations---tab
 #### [Hue dimmer switch woonkamer_down](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/switches_automations.yaml#L36)
 
 
-#### [Hue dimmer switch slaapkamer_on](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/switches_automations.yaml#L45)
+#### [Tradfri dimmer switch tuin_toggle](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/switches_automations.yaml#L45)
 
 
-#### [Hue dimmer switch slaapkamer_off](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/switches_automations.yaml#L63)
+#### [Hue dimmer switch slaapkamer_on](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/switches_automations.yaml#L54)
 
 
-#### [Hue dimmer switch slaapkamer_san_up_on](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/switches_automations.yaml#L81)
+#### [Hue dimmer switch slaapkamer_off](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/switches_automations.yaml#L72)
 
 
-#### [Hue dimmer switch slaapkamer_san_up_off](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/switches_automations.yaml#L94)
+#### [Hue dimmer switch slaapkamer_links_up_on](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/switches_automations.yaml#L90)
 
 
-#### [Hue dimmer switch slaapkamer_laris_up_on](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/switches_automations.yaml#L107)
+#### [Hue dimmer switch slaapkamer_links_up_off](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/switches_automations.yaml#L103)
 
 
-#### [Hue dimmer switch slaapkamer_laris_up_off](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/switches_automations.yaml#L120)
+#### [Hue dimmer switch slaapkamer_rechts_up_on](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/switches_automations.yaml#L116)
 
 
-#### [Denon AMP Channel TV](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/switches_automations.yaml#L134)
+#### [Hue dimmer switch slaapkamer_rechts_up_off](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/switches_automations.yaml#L129)
 
 
-#### [Denon AMP Channel Airplay](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/switches_automations.yaml#L144)
+#### [Denon AMP Channel TV](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/switches_automations.yaml#L143)
+
+
+#### [Denon AMP Channel Airplay](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/switches_automations.yaml#L153)
+
+
+#### [Denon AMP Power if Channel Airplay](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/switches_automations.yaml#L164)
 
 
 
@@ -737,31 +775,10 @@ See *all* my automations and its dependencies [down the page](#automations---tab
 #### [Nobody home 10 min. switch tv](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/tracker_automations.yaml#L49)
 
 
-#### [Someone Home motion before sunset](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/tracker_automations.yaml#L64)
+#### [Someone Home motion before sunset](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/tracker_automations.yaml#L65)
 
 
-#### [Someone home motion after sunset](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/tracker_automations.yaml#L82)
-
-
-
-
-## [Media player 🔈📺](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/volume_switches.yaml)
-#### [Volume Slider change Badkamer](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/volume_switches.yaml#L2)
-
-
-#### [Volume Change Badkamer](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/volume_switches.yaml#L9)
-
-
-#### [Volume Slider change PCSander](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/volume_switches.yaml#L19)
-
-
-#### [Volume Change PCSander](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/volume_switches.yaml#L26)
-
-
-#### [Volume Slider change Woonkamer](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/volume_switches.yaml#L36)
-
-
-#### [Volume Change Woonkamer](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/volume_switches.yaml#L43)
+#### [Someone home motion after sunset](https://git.digitaal-rechercheurs.nl/squandor/homeassistant/src/branch/master/configurations/automations/tracker_automations.yaml#L83)
 
 
 
