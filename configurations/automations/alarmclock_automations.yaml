@@ -7,25 +7,20 @@
   - condition: and
     conditions:
     - condition: state
-      entity_id: switch.slaapkamer_sand_switch
+      entity_id: switch.slaapkamer_links
       state: 'off'
   action:
   - service: homeassistant.turn_on
-    entity_id: switch.slaapkamer_sand_switch
+    entity_id: switch.slaapkamer_links
+  - service: homeassistant.turn_on
+    entity_id: switch.slaapkamer_rechts
+  - service: media_player.play_media
+    entity_id: media_player.google_home_slaapkamer
+    data:
+      media_content_type: music
+      media_content_id: "http://23543.live.streamtheworld.com/RADIO10.mp3?dist=tunein&DIST=TuneIn&TGT=TuneIn&maxServers=2&tdtok=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImtpZCI6ImZTeXA4In0.eyJpc3MiOiJ0aXNydiIsInN1YiI6IjIxMDY0IiwiaWF0IjoxNjI1MjMzMTMyLCJ0ZC1yZWciOmZhbHNlfQ.5bTvj7yc51kqNElZW1VD1OkI1fg-_iuRXHqmcxut6_I&gdpr=0&us_privacy=1YNY&partnertok=eyJhbGciOiJIUzI1NiIsImtpZCI6InR1bmVpbiIsInR5cCI6IkpXVCJ9.eyJ0cnVzdGVkX3BhcnRuZXIiOnRydWUsImlhdCI6MTYyNTIzMzEzMiwiaXNzIjoidGlzcnYifQ.tsMUstOQw1kpdD_4Kf-BL8LbdXSDzCGi-apvGnz2WD0"
+  - service: media_player.volume_set
+    data:
+      entity_id: media_player.google_home_slaapkamer
+      volume_level: 0.2
   id: cc885961f59f490ca93d23a4d9a123213e8a7
-
-- alias: 'Time: Toggle wakup light laris'
-  trigger:
-  - platform: state
-    entity_id: binary_sensor.laris_alarm_state
-    to: 'on'
-  condition:
-  - condition: and
-    conditions:
-    - condition: state
-      entity_id: switch.slaapkamer_lari_switch
-      state: 'off'
-  action:
-  - service: homeassistant.turn_on
-    entity_id: switch.slaapkamer_lari_switch
-  id: cc885961f59f4908439021ca93d23a4d9a123213e8a7

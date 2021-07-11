@@ -42,6 +42,15 @@
   - service: homeassistant.turn_off
     entity_id: group.alle_keuken_lampen
   id: 80d25f1e43d54d8e89912c5b5fb8d02e
+- alias: 'Light: tradfri dimmer switch tuin_toggle'
+  trigger:
+    platform: state
+    entity_id: sensor.tradfri_remote_action
+    to: toggle
+  action:
+  - service: homeassistant.toggle
+    entity_id: group.garden_lights
+  id: 80d25f1e43d54d8e89912c5b5fb8d1232102e
 - alias: 'Light: hue dimmer switch slaapkamer_on'
   trigger:
     platform: state
@@ -51,10 +60,10 @@
     condition: or
     conditions:
     - condition: state
-      entity_id: switch.slaapkamer_lari_switch
+      entity_id: switch.slaapkamer_rechts
       state: 'off'
     - condition: state
-      entity_id: switch.slaapkamer_sand_switch
+      entity_id: switch.slaapkamer_links
       state: 'off'
   action:
   - service: homeassistant.turn_on
@@ -69,66 +78,66 @@
     condition: or
     conditions:
     - condition: state
-      entity_id: switch.slaapkamer_lari_switch
+      entity_id: switch.slaapkamer_rechts
       state: 'on'
     - condition: state
-      entity_id: switch.slaapkamer_sand_switch
+      entity_id: switch.slaapkamer_links
       state: 'on'
   action:
   - service: homeassistant.turn_off
     entity_id: group.slaapkamer_lampen
   id: 0df8213e6bf24b5d88e222703795e425
-- alias: 'Light: hue dimmer switch slaapkamer_san_up_on'
+- alias: 'Light: hue dimmer switch slaapkamer_links_up_on'
   trigger:
     platform: state
     entity_id: sensor.hue_dimmer_switch_slaapkamer_action
     to: up-press
   condition:
     condition: state
-    entity_id: switch.slaapkamer_sand_switch
+    entity_id: switch.slaapkamer_links
     state: 'off'
   action:
   - service: homeassistant.turn_on
-    entity_id: switch.slaapkamer_sand_switch
+    entity_id: switch.slaapkamer_links
   id: 3ed08cc4962e4e4896fef19424b7189a
-- alias: 'Light: hue dimmer switch slaapkamer_san_up_off'
+- alias: 'Light: hue dimmer switch slaapkamer_links_up_off'
   trigger:
     platform: state
     entity_id: sensor.hue_dimmer_switch_slaapkamer_action
     to: up-press
   condition:
     condition: state
-    entity_id: switch.slaapkamer_sand_switch
+    entity_id: switch.slaapkamer_links
     state: 'on'
   action:
   - service: homeassistant.turn_off
-    entity_id: switch.slaapkamer_sand_switch
+    entity_id: switch.slaapkamer_links
   id: bf928ff9029a4a609e7148e9cbf335a8
-- alias: 'Light: hue dimmer switch slaapkamer_laris_up_on'
+- alias: 'Light: hue dimmer switch slaapkamer_rechts_up_on'
   trigger:
     platform: state
     entity_id: sensor.hue_dimmer_switch_slaapkamer_action
     to: down-press
   condition:
     condition: state
-    entity_id: switch.slaapkamer_lari_switch
+    entity_id: switch.slaapkamer_rechts
     state: 'off'
   action:
   - service: homeassistant.turn_on
-    entity_id: switch.slaapkamer_lari_switch
+    entity_id: switch.slaapkamer_rechts
   id: cdd234476ec946aeb5818cc44d463ac8
-- alias: 'Light: hue dimmer switch slaapkamer_laris_up_off'
+- alias: 'Light: hue dimmer switch slaapkamer_rechts_up_off'
   trigger:
     platform: state
     entity_id: sensor.hue_dimmer_switch_slaapkamer_action
     to: down-press
   condition:
     condition: state
-    entity_id: switch.slaapkamer_lari_switch
+    entity_id: switch.slaapkamer_rechts
     state: 'on'
   action:
   - service: homeassistant.turn_off
-    entity_id: switch.slaapkamer_lari_switch
+    entity_id: switch.slaapkamer_rechts
   id: b5056446e2354ed6a038309fa47358ab
 
 - alias: 'Switch: Denon AMP Channel TV'
@@ -151,3 +160,13 @@
     data:
       ip_denon_receiver_ip: !secret denon_receiver_ip
   id: 8e80a7841ba84ce5bccc56514017a4ef
+
+- alias: 'Switch: Denon AMP Power if Channel Airplay'
+  trigger:
+    platform: state
+    entity_id: input_select.amp_receiver_input
+    to: Airplay
+  action:
+  - entity_id: switch.denon_power
+    service: homeassistant.turn_off
+  id: 8e80a7841ba84ce5bccc56514017afdas4ef

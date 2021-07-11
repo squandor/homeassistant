@@ -27,25 +27,62 @@
     entity_id: light.wc_beneden_light
   id: 89e5366481024451a9bc4a1595bdad371231211
 
-- alias: 'Motion: Switch gang lampen'
+- alias: 'Motion: switch keuken lights on'
   trigger:
-    platform: numeric_state
-    entity_id: sensor.beweging_gang_burglar
-    above: '7'
+    platform: state
+    entity_id: binary_sensor.motion_keuken_occupancy
+    to: 'on'
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: group.alle_keuken_lampen
+      state: 'off'
+    - below: '30'
+      condition: numeric_state
+      entity_id: sensor.woonkamer_lux
   action:
   - service: homeassistant.turn_on
-    entity_id: light.gang_lampen
+    entity_id: group.alle_keuken_lampen
+  id: 89e5366481024451a9bc4a1595bdad3712311512312
+
+- alias: 'Motion: keuken lights off after 5 min.'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_keuken_occupancy
+      for: 00:05:00
+      to: 'off'
+    - above: '70'
+      entity_id: sensor.woonkamer_lux
+      platform: numeric_state
+  condition:
+    condition: state
+    entity_id: group.alle_keuken_lampen 
+    state: 'on'
+  action:
+  - service: homeassistant.turn_off
+    entity_id: group.alle_keuken_lampen
+  id: 89e5366481024451a9bc4a1595bdad37123121414
+
+- alias: 'Motion: Switch gang lampen'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.beweging_gang_home_security_motion_detection
+    to: 'on'
+  action:
+  - service: homeassistant.turn_on
+    entity_id: light.gang_lampen_z2m
   id: 89e5366481024451a9bc4a1595bdad37
 
 - id: c1637d730d7046a4b4d5db25f46924d0
   alias: 'Motion: Turn off light 10 minutes after last movement gang'
   trigger:
-  - below: '1'
-    entity_id: sensor.beweging_gang_burglar
+  - to: 'off'
+    entity_id: binary_sensor.beweging_gang_home_security_motion_detection
     for: 0:10:00
-    platform: numeric_state
+    platform: state
   action:
-  - entity_id: light.gang_lampen
+  - entity_id: light.gang_lampen_z2m
     service: homeassistant.turn_off
 - alias: 'Motion: trigger_ligts_motion_frontdoor_10_minutes'
   trigger:
@@ -80,7 +117,7 @@
 - alias: 'Motion: Turn on light gang_beneden on'
   trigger:
     platform: state
-    entity_id: binary_sensor.beweging_gang_lux_occupancy
+    entity_id: binary_sensor.beweging_gang_beneden_occupancy
     to: 'on'
   action:
   - service: homeassistant.turn_on
@@ -114,6 +151,27 @@
       data:
         photo:
           file: /config/www/img/wasmachine_done.jpg
+  - service: persistent_notification.create
+    data:
+      message: De wasmachine is klaar! Vergeet hem niet te legen!
+      title: 'Wasmachine: Klaar'
+  - service: scene.create
+    data:
+      scene_id: before
+      snapshot_entities:
+      - media_player.google_home_woonkamer
+  - service: media_player.volume_set
+    data:
+      entity_id: media_player.google_home_woonkamer
+      volume_level: 0.5
+  - service: tts.cloud_say
+    data:
+      message: 'Het wonder is geschied, de wasmachine is klaar, dus vergeet hem niet'
+      entity_id: media_player.google_home_woonkamer
+  - delay: '00:00:15'
+  - service: scene.turn_on
+    data:
+      entity_id: scene.before
   id: 87f2c7f85a54462383eb4de36a8f0b61
 - alias: 'Sensor: Wasmachine gaat weer beginnen'
   trigger:
@@ -144,13 +202,13 @@
   - condition: and
     conditions:
     - condition: state
-      entity_id: light.woonkamer_spots
+      entity_id: light.woonkamer_spots_z2m
       state: 'off'
     - below: '30'
       condition: numeric_state
       entity_id: sensor.woonkamer_lux
   action:
-  - entity_id: light.woonkamer_spots
+  - entity_id: light.woonkamer_spots_z2m
     service: homeassistant.turn_on
 - id: a643cf39bc2446f1872813b424d79a08
   alias: 'Motion: turn woonkamer spots off 30 minutes after last movement'
@@ -166,10 +224,10 @@
   - condition: and
     conditions:
     - condition: state
-      entity_id: light.woonkamer_spots
+      entity_id: light.woonkamer_spots_z2m
       state: 'on'
   action:
-  - entity_id: light.woonkamer_spots
+  - entity_id: light.woonkamer_spots_z2m
     service: homeassistant.turn_off
 
 - id: 507b15c277b6455e8112311071f9b5d4677
@@ -182,13 +240,13 @@
   - condition: and
     conditions:
     - condition: state
-      entity_id: light.living_room
+      entity_id: light.living_room_z2m
       state: 'off'
     - below: '30'
       condition: numeric_state
       entity_id: sensor.veranda_lux
   action:
-  - entity_id: light.living_room
+  - entity_id: light.living_room_z2m
     service: homeassistant.turn_on
 - id: a643cf39bc2446f1872813b424d79131a08
   alias: 'Motion: turn veranda spots off 30 minutes after last movement'
@@ -204,10 +262,10 @@
   - condition: and
     conditions:
     - condition: state
-      entity_id: light.living_room
+      entity_id: light.living_room_z2m
       state: 'on'
   action:
-  - entity_id: light.living_room
+  - entity_id: light.living_room_z2m
     service: homeassistant.turn_off
 
 - id: a643cf39bc2446f1872813b424d79a08123
@@ -223,3 +281,16 @@
     data_template:
       gateway_id: thermostaat
       temperature: '{{ trigger.to_state.state}}'
+
+- alias: 'Sensor: Low battery level detection & notification for all battery sensors'
+  id: a643cf39bc2446f1872813b424d79a081231231314132
+  description: ''
+  use_blueprint:
+    path: sbyx/low-battery-level-detection-notification-for-all-battery-sensors.yaml
+    input:
+      time: '10:00:00'
+      actions:
+        - service: notify.telegram_home
+          data:
+            message: 'Let op de batterij van {{sensors|replace("_"," ")}} is onder de 20%'
+      threshold: 20

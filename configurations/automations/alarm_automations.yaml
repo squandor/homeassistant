@@ -25,6 +25,7 @@
     platform: state
     to: 'on'
   - entity_id: group.motion_woonkamer
+    for: '10'
     from: 'off'
     platform: state
     to: 'on'
@@ -46,28 +47,3 @@
   - data:
       message: ALARM! The alarm has been triggered
     service: notify.telegram_home
-- alias: 'Octoprint: anet a8 smoke detector'
-  trigger:
-    platform: state
-    entity_id: binary_sensor.anet_a8_rookmelder_smoke
-    to: 'on'
-  action:
-  - service: notify.telegram_home
-    data:
-      message: Er is rook gedetecteerd bij de printer!!
-      title: ''
-  - service: notify.telegram_home
-    data:
-      message: ''
-      data:
-        photo:
-          file: /config/www/img/smoke_alarm.jpg
-  - service: tts.google_translate_say
-    data:
-      entity_id:
-      - media_player.google_home_slaapkamer
-      message: There is an smoke problem with the printer
-      language: en
-  - service: homeassistant.turn_off
-    entity_id: switch.shenzhen_neo_electronics_co_ltd_power_plug_12a_switch
-  id: d13e03fda6ee4df0ae9e23f2599c6ffb

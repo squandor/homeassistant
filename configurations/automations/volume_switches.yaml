@@ -1,51 +1,51 @@
-- id: '1535553174389'
-  alias: 'Media player: Volume Slider change Badkamer'
-  trigger:
-  - entity_id: input_number.speaker_badkamer_volume_slider
-    platform: state
-  action:
-  - service: rest_command.set_badkamer_volume
-- id: '1535553764469'
-  alias: 'Media player: Volume Change Badkamer'
-  trigger:
-  - entity_id: sensor.badkamer_volume
-    platform: state
-  action:
-  - data_template:
-      entity_id: input_number.speaker_badkamer_volume_slider
-      value: '{{ states.sensors.speaker_badkamer_volume_slider.state }}'
-    service: input_number.set_value
-- id: '1535553174390'
-  alias: 'Media player: Volume Slider change PCSander'
-  trigger:
-  - entity_id: input_number.speaker_pcsander_volume_slider
-    platform: state
-  action:
-  - service: rest_command.set_pcsander_volume
-- id: '1535553764491'
-  alias: 'Media player: Volume Change PCSander'
-  trigger:
-  - entity_id: sensor.pcsander_volume
-    platform: state
-  action:
-  - data_template:
-      entity_id: input_number.speaker_pcsander_volume_slider
-      value: '{{ states.sensors.speaker_pcsander_volume_slider.state }}'
-    service: input_number.set_value
-- id: '1535553174391'
-  alias: 'Media player: Volume Slider change Woonkamer'
-  trigger:
-  - entity_id: input_number.speaker_woonkamer_volume_slider
-    platform: state
-  action:
-  - service: rest_command.set_woonkamer_volume
-- id: '1535553764492'
-  alias: 'Media player: Volume Change Woonkamer'
-  trigger:
-  - entity_id: sensor.woonkamer_volume
-    platform: state
-  action:
-  - data_template:
-      entity_id: input_number.speaker_woonkamer_volume_slider
-      value: '{{ states.sensors.speaker_woonkamer_volume_slider.state }}'
-    service: input_number.set_value
+# - id: '1535553174389'
+#   alias: 'Media player: Volume Slider change Badkamer'
+#   trigger:
+#   - entity_id: input_number.speaker_badkamer_volume_slider
+#     platform: state
+#   action:
+#   - service: rest_command.set_badkamer_volume
+# - id: '1535553764469'
+#   alias: 'Media player: Volume Change Badkamer'
+#   trigger:
+#   - entity_id: sensor.badkamer_volume
+#     platform: state
+#   action:
+#   - data_template:
+#       entity_id: input_number.speaker_badkamer_volume_slider
+#       value: '{{ states.sensors.speaker_badkamer_volume_slider.state }}'
+#     service: input_number.set_value
+# - id: '1535553174390'
+#   alias: 'Media player: Volume Slider change PCSander'
+#   trigger:
+#   - entity_id: input_number.speaker_pcsander_volume_slider
+#     platform: state
+#   action:
+#   - service: rest_command.set_pcsander_volume
+# - id: '1535553764491'
+#   alias: 'Media player: Volume Change PCSander'
+#   trigger:
+#   - entity_id: sensor.pcsander_volume
+#     platform: state
+#   action:
+#   - data_template:
+#       entity_id: input_number.speaker_pcsander_volume_slider
+#       value: '{{ states.sensors.speaker_pcsander_volume_slider.state }}'
+#     service: input_number.set_value
+# - id: '1535553174391'
+#   alias: 'Media player: Volume Slider change Woonkamer'
+#   trigger:
+#   - entity_id: input_number.speaker_woonkamer_volume_slider
+#     platform: state
+#   action:
+#   - service: rest_command.set_woonkamer_volume
+# - id: '1535553764492'
+#   alias: 'Media player: Volume Change Woonkamer'
+#   trigger:
+#   - entity_id: sensor.woonkamer_volume
+#     platform: state
+#   action:
+#   - data_template:
+#       entity_id: input_number.speaker_woonkamer_volume_slider
+#       value: '{{ states.sensors.speaker_woonkamer_volume_slider.state }}'
+#     service: input_number.set_value

@@ -82,3 +82,46 @@
       title: ''
   id: e29f11e00cce4118ab39decaadac6d4f
 
+- id: '1625579108125'
+  alias: 'Sensor: Doorbell - Notify avond'
+  description: ''
+  condition:
+  - condition: and
+    conditions:
+    - condition: time
+  # At least one of the following is required.
+      after: "20:00:00"
+      before: "07:00:00"
+  use_blueprint:
+    path: seamus65/doorbell-notify-alexa-and-or-google-and-send-camera-snapshot-to-app.yaml
+    input:
+      notification_message: Er wordt aangebeld!
+      doorbell: binary_sensor.front_doorbell_doorbell
+      google_device: media_player.deurbel_avond
+      message: Er is iemand aan de deur!
+      camera: camera.amcrest_camera
+      notify_device: 4f6f4bcfa03849239d6429f4a8535afc
+      notification_title: Er wordt aangebeld!
+      delay: '00:00:01'
+
+- id: '16255791081252'
+  alias: 'Sensor: Doorbell - Notify overdag'
+  description: ''
+  condition:
+  - condition: and
+    conditions:
+    - condition: time
+  # At least one of the following is required.
+      after: "07:00:00"
+      before: "20:00:00"
+  use_blueprint:
+    path: seamus65/doorbell-notify-alexa-and-or-google-and-send-camera-snapshot-to-app.yaml
+    input:
+      notification_message: Er wordt aangebeld!
+      doorbell: binary_sensor.front_doorbell_doorbell
+      google_device: media_player.deurbel_overdag
+      message: Er is iemand aan de deur!
+      camera: camera.amcrest_camera
+      notify_device: 4f6f4bcfa03849239d6429f4a8535afc
+      notification_title: Er wordt aangebeld!
+      delay: '00:00:01'

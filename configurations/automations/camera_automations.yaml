@@ -21,68 +21,69 @@
       media_player: media_player.chromecast7566
   id: 2628e7239f0c4085827d6ab092bf2f43
 
-- alias: 'Camera: send picture on doorbell'
-  trigger:
-    platform: state
-    entity_id: binary_sensor.deurbel_sensor_2
-    from: 'on'
-    to: 'off'
-  action:
-  - service: variable.set_variable
-    data:
-      variable: frontdoor_pic_name
-      value_template: '{{ now().strftime("%Y-%m-%d_%H.%M") }}_1.jpg'
-  - service: variable.set_variable
-    data:
-      variable: frontdoor_pic_url
-      value_template: >
-        {% set url = states('input_text.base_url') %}
-        {% set cam_folder = '/local/cam_captures/' %}
-        {% set picname = states('variable.frontdoor_pic_name') %}
-        {{[url,cam_folder,picname]|join}}
-  - service: camera.snapshot
-    data:
-      entity_id: camera.nas_voordeur
-      filename: /config/www/cam_captures/{{ states('variable.frontdoor_pic_name')}}
-  - service: notify.telegram_home
-    data:
-      message: Er wordt aangebeld
-  - service: tts.google_translate_say
-    data:
-      entity_id:
-      - media_player.google_home_woonkamer
-      message: Somebody is ringing the doorbell
-      language: en
-  - delay: 00:00:03
-  - service: media_player.play_media
-    entity_id:
-    - media_player.woonkamer_hub
-    data_template:
-      media_content_id: '{{states(''variable.frontdoor_pic_url'')}}'
-      media_content_type: image/jpg
-  - service: notify.telegram_home
-    data:
-      message: Er wordt aangebeld
-      data:
-        photo:
-          file: /config/www/cam_captures/{{ states('variable.frontdoor_pic_name')}}
-  - delay: 00:00:02
-  - service: camera.snapshot
-    data:
-      entity_id: camera.nas_voordeur
-      filename: /config/www/cam_captures/{{ now().strftime("%Y-%m-%d_%H.%M") }}_2.jpg
-  - delay: 00:00:02
-  - service: notify.telegram_home
-    data:
-      message: Er wordt aangebeld
-      data:
-        photo:
-          file: /config/www/cam_captures/{{ now().strftime("%Y-%m-%d_%H.%M") }}_2.jpg
-  - delay: 00:00:15
-  - service: media_player.turn_off
-    entity_id:
-    - media_player.woonkamer_hub
-  id: 1bd671eb9d354097acf2d29c539724e4
+# - alias: 'Camera: send picture on doorbell'
+#   trigger:
+#     platform: state
+#     entity_id: binary_sensor.deurbel_sensor_2
+#     from: 'on'
+#     to: 'off'
+#   action:
+#   - service: var.set
+#     data:
+#       entity_id: 
+#         - var.frontdoor_pic_name
+#       value_template: '{{ now().strftime("%Y-%m-%d_%H.%M") }}_1.jpg'
+#   - service: variable.set_variable
+#     data:
+#       variable: frontdoor_pic_url
+#       value_template: >
+#         {% set url = states('input_text.base_url') %}
+#         {% set cam_folder = '/local/cam_captures/' %}
+#         {% set picname = states('variable.frontdoor_pic_name') %}
+#         {{[url,cam_folder,picname]|join}}
+#   - service: camera.snapshot
+#     data:
+#       entity_id: camera.nas_voordeur
+#       filename: /config/www/cam_captures/{{ states('variable.frontdoor_pic_name')}}
+#   - service: notify.telegram_home
+#     data:
+#       message: Er wordt aangebeld
+#   - service: tts.google_translate_say
+#     data:
+#       entity_id:
+#       - media_player.google_home_woonkamer
+#       message: Somebody is ringing the doorbell
+#       language: en
+#   - delay: 00:00:03
+#   - service: media_player.play_media
+#     entity_id:
+#     - media_player.woonkamer_hub
+#     data_template:
+#       media_content_id: '{{states(''variable.frontdoor_pic_url'')}}'
+#       media_content_type: image/jpg
+#   - service: notify.telegram_home
+#     data:
+#       message: Er wordt aangebeld
+#       data:
+#         photo:
+#           file: /config/www/cam_captures/{{ states('variable.frontdoor_pic_name')}}
+#   - delay: 00:00:02
+#   - service: camera.snapshot
+#     data:
+#       entity_id: camera.nas_voordeur
+#       filename: /config/www/cam_captures/{{ now().strftime("%Y-%m-%d_%H.%M") }}_2.jpg
+#   - delay: 00:00:02
+#   - service: notify.telegram_home
+#     data:
+#       message: Er wordt aangebeld
+#       data:
+#         photo:
+#           file: /config/www/cam_captures/{{ now().strftime("%Y-%m-%d_%H.%M") }}_2.jpg
+#   - delay: 00:00:15
+#   - service: media_player.turn_off
+#     entity_id:
+#     - media_player.woonkamer_hub
+#   id: 1bd671eb9d354097acf2d29c539724e4
 
 - id: 19238901890321809328190382190e
   alias: 'Camera: Doods motion frontdoor'
@@ -95,25 +96,26 @@
     state: 'on'
   action:
   - data:
-      value_template: '{{ now().strftime("%Y-%m-%d_%H.%M") }}_1.jpg'
-      variable: frontdoor_pic_name
-    service: variable.set_variable
+      value_template: '{{now().strftime("%Y-%m-%d_%H.%M")}}_1.jpg'
+      entity_id: var.frontdoor_pic_name
+    service: var.set
   - data:
       value_template: >
         {% set url = states('input_text.base_url') %}
         {% set cam_folder = '/local/cam_captures/' %}
-        {% set picname = states('variable.frontdoor_pic_name') %}
+        {% set picname = states('var.frontdoor_pic_name') %}
         {{[url,cam_folder,picname]|join}}
-      variable: frontdoor_pic_url
-    service: variable.set_variable
+      entity_id:
+        - var.frontdoor_pic_url
+    service: var.set
   - data:
-      entity_id: camera.nas_voordeur
-      filename: /config/www/cam_captures/{{ states('variable.frontdoor_pic_name')}}
+      entity_id: camera.voordeur
+      filename: /config/www/cam_captures/{{ states('var.frontdoor_pic_name')}}
     service: camera.snapshot
   - data:
       data:
         photo:
-          file: /config/www/cam_captures/{{ states('variable.frontdoor_pic_name')}}
+          file: /config/www/cam_captures/{{ states('var.frontdoor_pic_name')}}
       message: ''
     service: notify.telegram_home
   - data:
@@ -121,7 +123,7 @@
       title: ''
     service: notify.telegram_home
 
-- id: 19238901890321809328190382190e
+- id: 19238901890321809328190382190e2
   alias: 'Camera: Doods motion garden'
   trigger:
     - platform: template
@@ -132,25 +134,26 @@
     state: 'on'
   action:
   - data:
-      value_template: '{{ now().strftime("%Y-%m-%d_%H.%M") }}_1.jpg'
-      variable: garden_pic_name
-    service: variable.set_variable
+      value_template: '{{now().strftime("%Y-%m-%d_%H.%M")}}_1.jpg'
+      entity_id: var.garden_pic_name
+    service: var.set
   - data:
       value_template: >
         {% set url = states('input_text.base_url') %}
         {% set cam_folder = '/local/cam_captures/' %}
-        {% set picname = states('variable.frontdoor_pic_name') %}
+        {% set picname = states('var.garden_pic_name') %}
         {{[url,cam_folder,picname]|join}}
-      variable: garden_pic_url
-    service: variable.set_variable
+      entity_id:
+        - var.garden_pic_url
+    service: var.set
   - data:
-      entity_id: camera.nas_tuin
-      filename: /config/www/cam_captures/{{ states('variable.garden_pic_name')}}
+      entity_id: camera.tuin
+      filename: /config/www/cam_captures/{{ states('var.garden_pic_name')}}
     service: camera.snapshot
   - data:
       data:
         photo:
-          file: /config/www/cam_captures/{{ states('variable.garden_pic_name')}}
+          file: /config/www/cam_captures/{{ states('var.garden_pic_name')}}
       message: ''
     service: notify.telegram_home
   - data:

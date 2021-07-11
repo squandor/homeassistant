@@ -58,8 +58,9 @@
     entity_id: switch.tv_livingroom
     state: 'on'
   action:
-  - service: homeassistant.turn_off
-    entity_id: switch.tv_livingroom
+  - service: media_player.turn_off
+    target:
+      entity_id: media_player.lg_tv_remote
   id: 6f41214295f54fe199279f7597f4f3e0
 - alias: 'Presence: Someone Home motion before sunset'
   trigger:

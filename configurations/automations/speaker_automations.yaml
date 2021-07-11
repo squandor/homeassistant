@@ -48,3 +48,82 @@
   action:
   - entity_id: media_player.forked_daapd_output_speaker_woonkamer
     service: homeassistant.turn_off
+
+- alias: 'Motion: activate Denon amp when player is playing and speaker selected'
+  trigger:
+  - entity_id: binary_sensor.forked_daapd_is_playing
+    platform: state
+    to: 'on'
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: media_player.forked_daapd_output_speaker_woonkamer
+      state: 'on'
+    - condition: state
+      entity_id: binary_sensor.forked_daapd_is_playing
+      state: 'on'
+    - condition: state
+      entity_id: switch.denon_power
+      state: 'off'
+  action:
+  - entity_id: switch.denon_power
+    service: homeassistant.turn_on
+
+
+- alias: 'Motion: deactivate Denon amp when player is paused or stopped and amp is on'
+  trigger:
+  - platform: template
+    value_template: >
+        {{ now().timestamp() - as_timestamp(states.binary_sensor.forked_daapd_is_playing.last_changed) > 300 }}
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: switch.denon_power
+      state: 'on'
+    - condition: state
+      entity_id: binary_sensor.forked_daapd_is_playing
+      state: 'off'
+  action:
+  - entity_id: switch.denon_power
+    service: homeassistant.turn_off
+
+- alias: 'Motion: activate Denon amp when woonkamer speaker is selected.'
+  trigger:
+  - entity_id: media_player.forked_daapd_output_speaker_woonkamer
+    platform: state
+    to: 'on'
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: media_player.forked_daapd_output_speaker_woonkamer
+      state: 'on'
+    - condition: state
+      entity_id: binary_sensor.forked_daapd_is_playing
+      state: 'on'
+    - condition: state
+      entity_id: switch.denon_power
+      state: 'off'
+  action:
+  - entity_id: switch.denon_power
+    service: homeassistant.turn_on
+    
+- alias: 'Motion: deactivate Denon amp when woonkamer speaker is deselected for 5 minutes.'
+  trigger:
+  - platform: template
+    value_template: >
+        {{ now().timestamp() - as_timestamp(states.media_player.forked_daapd_output_speaker_woonkamer.last_changed) > 300 }}
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: media_player.forked_daapd_output_speaker_woonkamer
+      state: 'off'
+    - condition: state
+      entity_id: switch.denon_power
+      state: 'on'
+  action:
+  - entity_id: switch.denon_power
+    service: homeassistant.turn_off

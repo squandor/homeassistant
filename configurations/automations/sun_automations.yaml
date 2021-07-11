@@ -45,6 +45,10 @@
     data:
       entity_id: input_select.keuken_led_strip
       option: false
+  - service: python_script.set_state
+    data_template:
+      entity_id: sensor.old_kitchen_led_color
+      state: 'False'
   id: 83fbe6ad17b14e29b00a1619db4c1112
 - alias: 'Sun: run_at_sunrise'
   trigger:
